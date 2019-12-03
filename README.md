@@ -14,11 +14,11 @@
 - PostgreSQL バージョン 11.5
 
 ### サーバー
-- プラットフォーム 
+- プラットフォーム<br>
 Heroku OS Ubuntu
-- ミドルウェア 
+- ミドルウェア<br>
 Nginx
-- ストレージ 
+- ストレージ<br>
 AWS S3
 
 ### ドメイン（仮）
@@ -49,8 +49,8 @@ https://anri-tweet.herokuapp.com/
 ANRI - Agency Notice Rescue Information
 
 ### アプリケーション概要
-ANRIは、緊急時にユーザーの人探しを助けるアプリケーションです。 
-アプリ上で画像を投稿すると、画像に関連したハッシュタグを発行し、ユーザーのTwitterのタイムラインに自動投稿します。 
+ANRIは、緊急時にユーザーの人探しを助けるアプリケーションです。<br>
+アプリ上で画像を投稿すると、画像に関連したハッシュタグを発行し、ユーザーのTwitterのタイムラインに自動投稿します。<br>
 また、ツイートのリプライから、上位のホットワードを検出し、ユーザーのTwitterのタイムラインに再度投稿します。
 
 
@@ -86,23 +86,23 @@ user
 
 |#|カラム論理名|カラム物理名|型|桁|NOTNULL|主キー|インデックス|コメント|
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|
-|1|ID|id|integer|15|○||||ID|
-|2|ユーザーID|uid|string|255|||||ユーザーID|
-|3|プロバイダー|provider|string|255|||||プロバイダー|
-|4|アカウント名|name|string|255|||||アカウント名|
-|5|アカウントID|nickname|string|255|||||アカウントID|
-|6|場所|location|string|255|||||場所|
-|7|画像|image|string|255|||||画像|
-|8|メールアドレス|email|string|255|○||||メールアドレス|
-|9|パスワード|encrypted_password|string|255|||||パスワード|
-|10|パスワードリセット時のトークン|reset_password_token|string|255|○||||パスワードリセット時のトークン
-|11|パスワードリセット時のトークン作成日時|reset_password_sent_at|datetime||||||パスワードリセット時のトークン作成日時|
-|12|トークン作成日時|remember_created_at|datetime||||||トークン作成日時|
-|13|ログイン回数|sign_in_count|integer|255|||||ログイン回数|
-|14|ログイン時間|current_sign_in_at|datetime||||||ログイン時間|
-|15|ログアウト時間|last_sign_in_at|datetime||||||ログアウト時間|
-|16|ログインIPアドレス|current_sign_in_ip|string|255|||||ログインIPアドレス|
-|17|ログアウトIPアドレス|last_sign_in_ip|string|255|||||ログアウトIPアドレス|
+|1|ID|id|integer|15|○|||ID|
+|2|ユーザーID|uid|string|255||||ユーザーID|
+|3|プロバイダー|provider|string|255||||プロバイダー|
+|4|アカウント名|name|string|255||||アカウント名|
+|5|アカウントID|nickname|string|255||||アカウントID|
+|6|場所|location|string|255||||場所|
+|7|画像|image|string|255||||画像|
+|8|メールアドレス|email|string|255|○|||メールアドレス|
+|9|パスワード|encrypted_password|string|255||||パスワード|
+|10|パスワードリセット時のトークン|reset_password_token|string|255|○|||パスワードリセット時のトークン
+|11|パスワードリセット時のトークン作成日時|reset_password_sent_at|datetime|||||パスワードリセット時のトークン作成日時|
+|12|トークン作成日時|remember_created_at|datetime|||||トークン作成日時|
+|13|ログイン回数|sign_in_count|integer|255||||ログイン回数|
+|14|ログイン時間|current_sign_in_at|datetime|||||ログイン時間|
+|15|ログアウト時間|last_sign_in_at|datetime|||||ログアウト時間|
+|16|ログインIPアドレス|current_sign_in_ip|string|255||||ログインIPアドレス|
+|17|ログアウトIPアドレス|last_sign_in_ip|string|255||||ログアウトIPアドレス|
 
 
 ### テーブル論理名02
