@@ -26,7 +26,7 @@ gem 'jquery-rails'
 gem 'slim-rails'
 gem 'html2slim'
 #gem 'font-awesome-rails'
-gem 'mecab'
+#gem 'mecab'
 source 'https://rubygems.org'
 gem 'natto'
 
