@@ -311,7 +311,6 @@ tweet
 - pry-rails
 - better_errors
 - binding_of_caller
-- faker
 
 ### テスト (RSpec)
 - factory_bot_rails
@@ -330,6 +329,7 @@ tweet
 - selenium-webdriver
 - chromedriver-helper
 - tzinfo-data
+- faker
 
 ## チェンジログ
 変更があった場合、随時チェンジログを記載する。
