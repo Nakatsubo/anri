@@ -27,6 +27,7 @@ gem 'slim-rails'
 gem 'html2slim'
 #gem 'font-awesome-rails'
 gem 'mecab'
+source 'https://rubygems.org'
 gem 'natto'
 
 # API
