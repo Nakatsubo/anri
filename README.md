@@ -247,23 +247,23 @@ tweet
 
 
 ## ER図
-https://adobe.ly/35NCRY7
+<a href="https://adobe.ly/35NCRY7" target="_blank">https://adobe.ly/35NCRY7</a>
 
 
 ## サイトマップ
-https://bit.ly/2P6KiTx
+<a href="https://bit.ly/2P6KiTx" target="_blank">https://bit.ly/2P6KiTx</a>
 
 
 ## 画面遷移図（プロトタイプ）
-https://adobe.ly/2qYrvlj
+<a href="https://adobe.ly/2qYrvlj" target="_blank">https://adobe.ly/2qYrvlj</a>
 
 
 ## ワイヤーフレーム/デザイン
-https://adobe.ly/2OKLb53
+<a href="https://adobe.ly/2OKLb53" target="_blank">https://adobe.ly/2OKLb53</a>
 
 
 ### 色彩設計
-https://adobe.ly/2P0fRhM
+<a href="https://adobe.ly/2P0fRhM" target="_blank">https://adobe.ly/2P0fRhM</a>
 
 
 ## 使用予定Gem
