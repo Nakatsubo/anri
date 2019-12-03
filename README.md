@@ -246,24 +246,20 @@ tweet
 |4|外部キー|photo_id|text|255|||○|外部キー|
 
 
-# ER図
-https://adobe.ly/35NCRY7
-
+## ER図
+[https://adobe.ly/35NCRY7](https://adobe.ly/35NCRY7){:target="_blank"}
 
 ## サイトマップ
-https://bit.ly/2P6KiTx
-
+[https://bit.ly/2P6KiTx](https://bit.ly/2P6KiTx){:target="_blank"}
 
 ## 画面遷移図（プロトタイプ）
-https://adobe.ly/2qYrvlj
-
+[https://adobe.ly/2qYrvlj](https://adobe.ly/2qYrvlj){:target="_blank"}
 
 ## ワイヤーフレーム/デザイン
-https://adobe.ly/2OKLb53
-
+[https://adobe.ly/2OKLb53](https://adobe.ly/2OKLb53){:target="_blank"}
 
 ### 色彩設計
-https://adobe.ly/2P0fRhM
+[https://adobe.ly/2P0fRhM](https://adobe.ly/2P0fRhM){:target="_blank"}
 
 
 ## 使用予定Gem
