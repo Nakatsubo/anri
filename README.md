@@ -312,3 +312,6 @@ tweet
   - ER図 を修正
   - label_relationship を削除
   - reply_label_relationship を削除
+- 19/12/04 version1.2<br>
+  テーブル構造の見直し
+  - tweetテーブルの tweet カラム名を、 endemic に変更
