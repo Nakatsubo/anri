@@ -32,4 +32,9 @@ module ApplicationHelper
       # }
     }
   end
+
+  # judge_current_user
+  def logged_in?
+    current_user.present?
+  end
 end

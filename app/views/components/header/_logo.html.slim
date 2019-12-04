@@ -1,0 +1,16 @@
+- if logged_in?
+  .logo
+    h1
+      = link_to user_path(current_user.name) do
+        = image_tag 'logo.svg'
+          span ANRI - Agencies Notice Rescue Information
+    p
+      | - 
+      strong A
+      | gencies 
+      strong N
+      | otice 
+      strong R
+      | escue 
+      strong I
+      | nformation
