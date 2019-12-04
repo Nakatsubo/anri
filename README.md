@@ -263,7 +263,8 @@ tweet
 - jbuilder
 - bootsnap
 - rails-i18n
-- bcrypt
+- turbolinks
+~~- bcrypt~~
 
 ### 認証・ユーザー管理
 - devise
