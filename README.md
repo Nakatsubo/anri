@@ -3,7 +3,7 @@
 ## バージョン情報
 
 ### 開発言語
-- Ruby バージョン2.6.5
+- Ruby バージョン 2.6.5
 
 ### ソフトウェアフレームワーク
 - Ruby on Rails バージョン 5.2.3
@@ -46,7 +46,7 @@ https://anri-tweet.herokuapp.com/
 ## カタログ設計
 
 ### アプリケーション名
-ANRI - Agency Notice Rescue Information
+ANRI - Agencies Notice Rescue Information
 
 ### アプリケーション概要
 ANRIは、緊急時にユーザーの人探しを助けるアプリケーションです。<br>
@@ -264,7 +264,7 @@ tweet
 - bootsnap
 - rails-i18n
 - turbolinks
-~~- bcrypt~~
+- bcrypt
 
 ### 認証・ユーザー管理
 - devise
@@ -272,6 +272,9 @@ tweet
 - omniauth-twitter
 - rails_admin
 - cancan
+
+### SEO
+- meta-tags
 
 ### API
 - aws-sdk-s3
@@ -314,4 +317,8 @@ tweet
   - reply_label_relationship を削除
 - 19/12/04 version1.2<br>
   テーブル構造の見直し
+  - ER図 を修正
   - tweetテーブルの tweet カラム名を、 endemic に変更
+- 19/12/04 version1.3<br>
+  SEO用の gem を追加。metaタグを管理する
+  - gem meta-tags

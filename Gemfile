@@ -42,6 +42,10 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+# SEO
+# Custom
+gem 'meta-tags'
+
 # Debug
 # Custom
 gem 'pry-rails'
