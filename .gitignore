@@ -28,3 +28,10 @@
 
 # Ignore system environment variable
 /config/secrets/*
+
+# Ignore devise view
+/app/views/devise/confirmations
+/app/views/devise/mailer
+/app/views/devise/passwords
+/app/views/devise/registrations
+/app/views/devise/unlocks
