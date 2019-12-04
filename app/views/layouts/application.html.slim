@@ -8,8 +8,12 @@ html lang='ja'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag('favicon.ico')
   body
-    / flash は開発用なので本番環境では不要
-    p.notice = notice
-    p.alert = alert
-
-    = yield
+    #container
+      / flash は開発用なので本番環境では不要
+      p.notice = notice
+      p.alert = alert
+      = render 'components/header/header'
+      section.sec
+        .inner
+          = yield
+      = render 'components/footer/footer'

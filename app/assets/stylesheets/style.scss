@@ -1,0 +1,11 @@
+/* ロゴの表示テスト */
+.logo {
+  display: none;
+  h1 {
+    a {
+      img {
+        height: 40px;
+      }
+    }
+  }
+}
