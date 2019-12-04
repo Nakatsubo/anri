@@ -1,0 +1,38 @@
+- set_meta_tags title: "ABOUT | ANRI", description: "ANRIは緊急時の人探しをサポートするアプリケーションです。"
+.content.about
+  .main
+    .tit
+      h2
+        = image_tag 'logo.svg'
+          span ANRI
+      p
+        | - <strong>A</strong>gencies <strong>N</strong>otice <strong>R</strong>escue <strong>I</strong>nformation
+    .sub_tit
+      p About ANRI
+    .txt
+      p
+        | ANRIは緊急時の人探しをサポートするアプリケーションです。
+        br
+        br
+        | 情報拡散を目的とし、<a href="https://twitter.com/" target="_blank">Twitter</a>と連携します。
+        br
+        br
+        | ANRIはあなたが投稿した画像のデータを、<a href="https://cloud.google.com/vision/" target="_blank"><strong>Cloud Vision API</strong></a>を使って、客観的に解析します。<br>解析した画像データからハッシュタグを自動発行、<a href="https://cloud.google.com/translate/" target="_blank"><strong>Cloud Translation API</strong></a>を使って、日本語翻訳します。
+        br
+        br
+        | 投稿した画像と発行したハッシュタグは、<br>ANRIからあなたのTwitterのタイムラインへ、自動投稿することができます。
+        br
+        br
+        | また、ANRIはあなたの投稿へのリプライを解析し、<br>新たなハッシュタグを自動発行し、投稿することができます。
+        br
+        br
+        | これらの機能を利用して、緊急時のスムースな人探しのサポートを目指します。
+  .sub
+    - if user_signed_in?
+      .btn.mypage
+        = link_to 'タイムライン', user_path(current_user.name)
+    - else
+      .btn.login
+        = link_to 'ログイン', user_twitter_omniauth_authorize_path
+      .btn.twitter
+        = link_to 'Twitterのアカウントを作成', 'https://twitter.com/', target: "_blank"

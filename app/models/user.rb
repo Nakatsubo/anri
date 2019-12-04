@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   devise :database_authenticatable,
-         :registerable,
-         :recoverable,
+        #  :registerable,
+        #  :recoverable,
          :rememberable,
-         :validatable,
+        #  :validatable,
          :omniauthable
 
   def self.find_for_oauth(auth)
@@ -25,7 +25,6 @@ class User < ApplicationRecord
 
   private
 
-  # => Create dummy_url
   def self.dummy_email(auth)
     "#{auth.uid}-#{auth.provider}@example.com"
   end
