@@ -33,5 +33,7 @@ module Anri
                       request_specs: false
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
+    # Javascript
+    config.generators.javascript_engine = :js
   end
 end
