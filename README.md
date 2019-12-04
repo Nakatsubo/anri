@@ -176,7 +176,7 @@ label
 |4|ラベル名3|label3|string|255|○|||ラベル名3|
 |5|ラベル名4|label4|string|255|○|||ラベル名4|
 |6|ラベル名5|label5|string|255|○|||ラベル名5|
-|7|外部キー|label_id|bigint|255|○||○|外部キー|
+|7|外部キー|photo_id|bigint|255|○||○|外部キー|
 
 
 ### テーブル論理名06
@@ -196,7 +196,7 @@ reply_label
 |4|ラベル名3|reply_label3|string|255|○|||ラベル名3|
 |5|ラベル名4|reply_label4|string|255|○|||ラベル名4|
 |6|ラベル名5|reply_label5|string|255|○|||ラベル名5|
-|7|外部キー|reply_label_id|bigint|255|○||○|外部キー|
+|7|外部キー|photo_id|bigint|255|○||○|外部キー|
 
 
 ### テーブル論理名07
@@ -306,7 +306,7 @@ tweet
 変更があった場合、随時チェンジログを記載する。
 
 - 19/12/02 version1.0 を作成
-- 19/12/02 version1.1<br>
+- 19/12/03 version1.1<br>
   テーブル構造の見直し
   - ER図 を修正
   - label_relationship を削除
