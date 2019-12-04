@@ -13,7 +13,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth = request.env['omniauth.auth']
     $access_token = auth.extra.access_token.token
     $access_token_secret = auth.extra.access_token.secret
-    binding.pry
 
     if @user.persisted?
       print("persisted true")
