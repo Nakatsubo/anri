@@ -1,8 +1,12 @@
-- if current_user.present?
-  .logo
-    h1
-      = link_to user_path(current_user.name) do
+.logo
+  h1
+    - if user_signed_in?
+      = link_to user_path(current_user.name)
         = image_tag 'logo.svg'
-          span ANRI - Agencies Notice Rescue Information
-    p
-      | - <strong>A</strong>gencies <strong>N</strong>otice <strong>R</strong>escue <strong>I</strong>nformation
+        span ANRI - Agencies Notice Rescue Information
+    - else
+      = link_to root_path
+        = image_tag 'logo.svg'
+        span ANRI - Agencies Notice Rescue Information
+  p
+    | - <strong>A</strong>gencies <strong>N</strong>otice <strong>R</strong>escue <strong>I</strong>nformation
