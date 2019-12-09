@@ -1,11 +1,23 @@
 /*////////////////////////////////////////
   modal
 ////////////////////////////////////////*/
+button {
+  cursor: pointer;
+}
+
 .modal_btn {
   margin: 0;
   img {
     width: auto;
     height: 2.5rem;
+  }
+}
+
+/* サイズはダミー 最終的に調整すること */
+.modal_btn.new_btn {
+  img {
+    width: 50px;
+    height: auto;
   }
 }
 

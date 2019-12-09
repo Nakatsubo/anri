@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # コメントアウトは最終的に整理しておくこと
   # photos
-  resources :photos, only: %i(new create)
+  resources :photos, only: %i(create)
   # users
   resources :users, param: :name, path: '/', only: %i(show)
   # homes
