@@ -23,6 +23,8 @@ class User < ApplicationRecord
     user
   end
 
+  has_many :photos, dependent: :destroy
+
   private
 
   def self.dummy_email(auth)
