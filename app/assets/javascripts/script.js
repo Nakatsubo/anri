@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }, false);
 
   const js_modal_close = document.getElementById('footer-modal-close');
-  console.log(js_modal_close);
   js_modal_close.addEventListener('click', (e) => {
     let modal = document.getElementById('footer-modal');
     $(modal).fadeOut(); // by jQuery
