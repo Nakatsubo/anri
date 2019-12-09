@@ -1,5 +1,6 @@
+- set_meta_tags title: current_user.name + " | ANRI", description: "タイムライン"
 .content
-  h2 ユーザーのトップページ
-  /リンクはダミー
-  = link_to 'ログアウト', destroy_user_session_path, method: :delete
-  /= current_user.name
+  .tit
+    h1 #{current_user.name}
+  .main
+    /= current_user.name

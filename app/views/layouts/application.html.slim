@@ -12,8 +12,10 @@ html lang='ja'
       / flash は開発用なので本番環境では不要
       p.notice = notice
       p.alert = alert
-      = render 'components/header/header'
-      section.sec
-        .inner
-          = yield
+      main.main
+        = render 'components/aside/right_aside'
+        section.sec
+          .inner
+            = yield
+        = render 'components/aside/left_aside'
       = render 'components/footer/footer'

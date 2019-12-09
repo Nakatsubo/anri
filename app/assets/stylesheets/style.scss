@@ -1,3 +1,7 @@
+@import '_reset.scss';
+@import '_mixin.scss';
+@import '_js.scss';
+
 /* ロゴの表示テスト */
 /*.header {
 .logo {
@@ -11,3 +15,7 @@
   }
 }
 }*/
+
+img {
+  max-width: 100px;
+}

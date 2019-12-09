@@ -1,0 +1,20 @@
+- if user_signed_in?
+  nav.nav.pc
+    ul
+      li
+        /new_photos_path
+        = link_to root_path
+          = image_tag 'new.svg'
+      li
+        /searchs_path
+        = link_to root_path
+          = image_tag 'search.svg'
+      li
+        = link_to destroy_user_session_path, method: :delete
+          = image_tag 'logout.svg'
+      li
+        = link_to about_homes_path
+          = image_tag 'logo.svg'
+      li
+        = link_to 'https://twitter.com/', target: "_blank"
+          = image_tag 'twitter.svg'

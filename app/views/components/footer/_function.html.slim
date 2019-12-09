@@ -1,0 +1,12 @@
+div id="footer-modal" class="modal"
+  div id="footer-modal-close" class="modal_bg js-modal-close"
+  .modal_content
+    .modal_func
+      ul
+        li.timeline = link_to 'タイムライン', user_path(current_user.name)
+        li = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        li = link_to '利用規約', terms_homes_path
+        li = link_to 'プライバシーポリシー', privacy_homes_path
+        li
+          = link_to about_homes_path
+            = image_tag 'logo.svg'
