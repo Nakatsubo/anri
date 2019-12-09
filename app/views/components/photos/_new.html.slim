@@ -1,0 +1,15 @@
+div id="photo-modal" class="modal"
+  div id="photo-modal-close" class="modal_bg js-modal-close"
+  .modal_content
+    .modal_func
+      /動作テスト ajaxさせない
+      - if @photo.errors.any?
+        #error_content.error_content.error_content_comment
+        ul
+          - @photo.errors.full_messages.each do |message|
+            li = message
+      = form_with model: @photo, local: true, url: photos_path(@photo.id) do |f|
+        .photo
+          = f.file_field :photo
+          = f.submit '画像をアップロード', class: 'dummy_submit'
+          /button.btn_submit 画像をアップロード

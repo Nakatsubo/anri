@@ -2,8 +2,11 @@
   nav.nav.pc
     ul
       li
-        = link_to new_photo_path
-          = image_tag 'new.svg'
+        /モーダルにする
+        .modal_btn.new_btn
+          button id="photo-modal-open" class="js-modal-open"
+            = image_tag "new.svg"
+        = render 'components/photos/new'
       li
         /searchs_path
         = link_to root_path
