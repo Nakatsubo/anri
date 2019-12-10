@@ -5,15 +5,13 @@ class PhotosController < ApplicationController
     if params[:photo].present?
       @photo = Photo.new(photo_params)
       @photo.user_id = current_user.id
-      @photo.save
-      # flash は開発用なので本番環境では削除
-      flash[:notice] = "成功"
-      redirect_to user_path(current_user.name)
+      if @photo.save
+        render 'components/posts/tweets_index'
+      else
+        render 'components/posts/photos_index'
+      end
     else
-      # flash は開発用なので本番環境では削除
-      #flash[:notice] = "画像をアップロードしてください"
-      #redirect_to user_path(current_user.name)
-      render :index
+      render 'components/posts/photos_index'
     end
   end
 
