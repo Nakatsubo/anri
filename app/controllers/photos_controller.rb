@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
       @photo.user_id = current_user.id
       @photo.save
       # flash は開発用なので本番環境では削除
-      flash[:notice] = "success"
+      flash[:notice] = "成功"
       redirect_to user_path(current_user.name)
     else
       # flash は開発用なので本番環境では削除
