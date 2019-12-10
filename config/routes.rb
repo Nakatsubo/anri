@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # コメントアウトは最終的に整理しておくこと
+  # tweets
+  resources :tweets, only: %i(create)
   # photos
   resources :photos, only: %i(create)
   # users
