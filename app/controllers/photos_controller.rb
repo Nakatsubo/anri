@@ -11,8 +11,9 @@ class PhotosController < ApplicationController
       redirect_to user_path(current_user.name)
     else
       # flash は開発用なので本番環境では削除
-      flash[:notice] = "画像をアップロードしてください"
-      redirect_to user_path(current_user.name)
+      #flash[:notice] = "画像をアップロードしてください"
+      #redirect_to user_path(current_user.name)
+      render :index
     end
   end
 

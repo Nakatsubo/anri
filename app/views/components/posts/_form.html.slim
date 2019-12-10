@@ -1,0 +1,6 @@
+.form_new
+  = form_with model: @photo, url: photos_path(@photo.id) do |f|
+    .photo
+      = f.file_field :photo
+      = f.submit '画像をアップロード', class: 'dummy_submit'
+      /button.btn_submit 画像をアップロード ==> ボタン作成用

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @photo = Photo.new
+    # @tweet = Tweet.new
   end
 
 end
