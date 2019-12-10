@@ -24,6 +24,7 @@ class User < ApplicationRecord
   end
 
   has_many :photos, dependent: :destroy
+  has_many :tweets, dependent: :destroy
 
   private
 
