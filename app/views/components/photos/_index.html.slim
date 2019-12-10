@@ -1,0 +1,13 @@
+div id="photo-modal" class="modal"
+  div id="photo-modal-close" class="modal_bg js-modal-close"
+  .modal_content
+    .modal_func
+      /#error ==> Ajaxさせない
+      = render 'components/photos/profile'
+      = render 'components/photos/form'
+      .attention
+        ul
+          li ・ハッシュタグを発行したい画像をアップロードしてください。
+          li ・ハッシュタグは自動で5件生成されます。
+      .btn.back
+        = link_to 'タイムラインに戻る', user_path(current_user.name)
