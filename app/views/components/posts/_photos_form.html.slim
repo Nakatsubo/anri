@@ -1,5 +1,5 @@
-.form_new
-  = form_with model: @photo, url: photos_path(@photo.id) do |f|
+.form_photo
+  = form_with model: @photo, url: photos_path(@photo) do |f|
     .photo
       = f.file_field :photo
       = f.submit '画像をアップロード', class: 'dummy_submit'

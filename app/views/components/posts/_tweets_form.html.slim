@@ -1,10 +1,14 @@
-.form_new
-  = form_with model: @photo, local: true, url: photos_path(@photo.id) do |f|
-    .photo
-      = f.file_field :photo
-      = f.submit '画像をアップロード', class: 'dummy_submit'
-      /button.btn_submit 画像をアップロード ==> ボタン作成用
-.attention
-  ul
-    li ・ハッシュタグを発行したい画像をアップロードしてください。
-    li ・ハッシュタグは自動で5件生成されます。
+.preview
+  /= image_tag
+.form_tweet
+  = form_with model: @tweet, local: true, url: tweets_path(@tweet) do |f|
+    .tweet
+      /= f.text_area :text, placeholder: "いまどうしてる？", value: @labels, cols: 40, rows: 5, maxlength: 116
+      = f.text_area :text, placeholder: 'いまどうしてる？', cols: 40, rows: 5, maxlength: 116
+      .attention
+        ul
+          li ・発行されたハッシュタグは、英語を日本語に自動翻訳しています。
+          li ・翻訳が意図に反している場合など、ご自身でハッシュタグを修正してください。
+          li ・本文はハッシュタグを含め、116文字以内で投稿してください。
+      = f.submit 'ツイートする', class: 'dummy_submit'
+      /button.btn_submit ツイートする ==> ボタン作成用
