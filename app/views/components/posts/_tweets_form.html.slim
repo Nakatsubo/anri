@@ -3,8 +3,8 @@
 .form_tweet
   = form_with model: @tweet, url: tweets_path(@tweet) do |f|
     .tweet
-      /= f.text_area :text, placeholder: "いまどうしてる？", value: @labels, cols: 40, rows: 5, maxlength: 116
-      = f.text_area :text, placeholder: 'いまどうしてる？', cols: 40, rows: 5, maxlength: 116, name: 'tweet[text]'
+      = f.text_area :text, placeholder: "いまどうしてる？", value: @set_labels, cols: 40, rows: 5, maxlength: 116, name: 'tweet[text]'
+      /= f.text_area :text, placeholder: 'いまどうしてる？', cols: 40, rows: 5, maxlength: 116, name: 'tweet[text]'
       .attention
         ul
           li ・発行されたハッシュタグは、英語を日本語に自動翻訳しています。
