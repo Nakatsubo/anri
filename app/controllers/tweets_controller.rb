@@ -6,9 +6,11 @@ class TweetsController < ApplicationController
       @tweet = Tweet.new(tweet_params)
       @photo = Photo.recent(current_user)
       @photo_uri = set_uri(@photo.photo.blob.key)
-      binding.pry
+      @result = AnriTwitter.new(@tweet.text.to_s, @photo_uri.to_s).tweet
+      @tweet.endemic = @result.id
       @tweet.user_id = current_user.id
       @tweet.photo_id = @photo.id
+      binding.pry
       if @tweet.save
         render 'components/posts/posts_index', local: { tweet: @tweet, photo_uri: @photo_uri }
       else

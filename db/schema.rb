@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_085255) do
+ActiveRecord::Schema.define(version: 2019_12_11_110630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_085255) do
   end
 
   create_table "tweets", force: :cascade do |t|
-    t.integer "endemic"
+    t.bigint "endemic", null: false
     t.bigint "user_id"
     t.bigint "photo_id"
     t.datetime "created_at", null: false
