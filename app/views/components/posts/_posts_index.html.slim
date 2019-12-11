@@ -1,2 +1,3 @@
 p.image = image_tag @photo_uri
 p.text = @tweet.text
+p.date #{time_ago_in_words(@tweet.created_at)}前
