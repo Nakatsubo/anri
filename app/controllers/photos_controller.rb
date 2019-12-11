@@ -4,9 +4,11 @@ class PhotosController < ApplicationController
   def create
     if params[:photo].present?
       @photo = Photo.new(photo_params)
+      @photo_uri = set_uri(@photo.photo.blob.key)
+      binding.pry
       @photo.user_id = current_user.id
       if @photo.save
-        render 'components/posts/tweets_index'
+        render 'components/posts/tweets_index', local: { photo_uri: @photo_uri }
       else
         render 'components/posts/photos_index'
       end

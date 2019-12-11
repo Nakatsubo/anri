@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :basic
 
+  def set_uri(data)
+    'https://anri-development.s3-ap-northeast-1.amazonaws.com/' + data
+  end
+
   private
 
   def basic
