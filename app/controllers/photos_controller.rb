@@ -5,7 +5,6 @@ class PhotosController < ApplicationController
     if params[:photo].present?
       @photo = Photo.new(photo_params)
       @photo_uri = set_uri(@photo.photo.blob.key)
-      binding.pry
       @photo.user_id = current_user.id
       if @photo.save
         render 'components/posts/tweets_index', local: { photo_uri: @photo_uri }
