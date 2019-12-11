@@ -10,7 +10,6 @@ class TweetsController < ApplicationController
       @tweet.endemic = @result.id
       @tweet.user_id = current_user.id
       @tweet.photo_id = @photo.id
-      binding.pry
       if @tweet.save
         render 'components/posts/posts_index', local: { tweet: @tweet, photo_uri: @photo_uri }
       else
