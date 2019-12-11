@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', (e) => {
 
   // photo-modal
   const photo_modal_open = document.getElementById('photo-modal-open');
