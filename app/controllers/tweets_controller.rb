@@ -9,7 +9,11 @@ class TweetsController < ApplicationController
       @tweet.photo_id = @photo.id
       if @tweet.save
         render 'components/posts/posts_index', local: { tweet: @tweet }
+      else
+        render 'components/posts/posts_error'
       end
+    else
+      render 'components/posts/posts_error'
     end
   end
 
