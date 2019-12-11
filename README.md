@@ -212,8 +212,9 @@ tweet
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|
 |1|ID|id|integer|15|○|||ID|
 |2|ツイートid|endemic|integer|255|○|||ツイートid|
-|3|外部キー|user_id|text|255|||○|外部キー|
-|4|外部キー|photo_id|text|255|||○|外部キー|
+|3|テキスト|text|text|116||||テキスト|
+|4|外部キー|user_id|text|255|||○|外部キー|
+|5|外部キー|photo_id|text|255|||○|外部キー|
 
 
 ## ER図
@@ -322,3 +323,5 @@ tweet
 - 19/12/04 version1.3<br>
   SEO用の gem を追加。metaタグを管理する
   - gem meta-tags
+- 19/12/11 version2.1<br>
+  Tweetテーブルに textカラムを追加。API実装時に不要であれば削除。
