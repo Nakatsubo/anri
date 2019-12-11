@@ -1,6 +1,5 @@
 .preview
-  /画像をトリミングする
-  /= image_tag
+  = image_tag @photo_uri
 .form_tweet
   = form_with model: @tweet, url: tweets_path(@tweet) do |f|
     .tweet
