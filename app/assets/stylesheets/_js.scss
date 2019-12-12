@@ -36,7 +36,7 @@ button {
   }
   .modal_content {
     max-width: 56rem;
-    width: 80%;
+    width: 88%;
     height: auto;
     position: absolute;
     top: 50%;
@@ -71,4 +71,18 @@ button {
       }
     }
   }
+}
+
+/*////////////////////////////////////////
+  navigation
+////////////////////////////////////////*/
+
+.is-inactive {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.is-active {
+  display: block;
+  transition: all 0.5s ease;
 }
