@@ -1,0 +1,4 @@
+- if @client.user.profile_banner_url.present?
+  img src="#{@client.user.profile_banner_url}"
+- else
+  = image_tag 'noimage_banner.jpg'

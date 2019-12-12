@@ -2,6 +2,7 @@
   mixin
 ////////////////////*/
 
+/* color pallet //////////*/
 $white: #FFFFFF;
 $darkgray: #657786;
 $lightgray: #FAFAFA;
@@ -11,3 +12,28 @@ $lightorange: #FF8D57;
 $darkblue: #1DA1F2;
 $lightblue: #71C9F8;
 $red: #EA0001;
+
+/* media query //////////*/
+//$pc: 1040px;
+$tab: 959px;
+$sp: 559px;
+
+/*
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+*/
+
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}

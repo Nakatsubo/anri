@@ -2,10 +2,12 @@ div id="photo-modal" class="modal"
   div id="photo-modal-close" class="modal_bg js-modal-close"
   .modal_content
     .modal_func
-      = render 'components/posts/profile'
+      .profile
+        = render 'components/posts/profile'
       #photo.photo
         #photo_error.error
         = render 'components/posts/photos_form'
       #tweet.tweet
       #post.post
-      = render 'components/posts/btn'
+      .btn.back
+        = render 'components/posts/btn'

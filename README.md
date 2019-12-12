@@ -93,16 +93,19 @@ user
 |5|アカウントID|nickname|string|255||||アカウントID|
 |6|場所|location|string|255||||場所|
 |7|画像|image|string|255||||画像|
-|8|メールアドレス|email|string|255|○|||メールアドレス|
-|9|パスワード|encrypted_password|string|255||||パスワード|
-|10|パスワードリセット時のトークン|reset_password_token|string|255|○|||パスワードリセット時のトークン
-|11|パスワードリセット時のトークン作成日時|reset_password_sent_at|datetime|||||パスワードリセット時のトークン作成日時|
-|12|トークン作成日時|remember_created_at|datetime|||||トークン作成日時|
-|13|ログイン回数|sign_in_count|integer|255||||ログイン回数|
-|14|ログイン時間|current_sign_in_at|datetime|||||ログイン時間|
-|15|ログアウト時間|last_sign_in_at|datetime|||||ログアウト時間|
-|16|ログインIPアドレス|current_sign_in_ip|string|255||||ログインIPアドレス|
-|17|ログアウトIPアドレス|last_sign_in_ip|string|255||||ログアウトIPアドレス|
+|8|説明文|description|string|255||||説明文|
+|9|ウェブサイト|website|text|255||||ウェブサイト|
+|10|TwitterURL|twitter|text|255||||TwitterURL|
+|11|メールアドレス|email|string|255|○|||メールアドレス|
+|12|パスワード|encrypted_password|string|255||||パスワード|
+|13|パスワードリセット時のトークン|reset_password_token|string|255|○|||パスワードリセット時のトークン
+|14|パスワードリセット時のトークン作成日時|reset_password_sent_at|datetime|||||パスワードリセット時のトークン作成日時|
+|15|トークン作成日時|remember_created_at|datetime|||||トークン作成日時|
+|16|ログイン回数|sign_in_count|integer|255||||ログイン回数|
+|17|ログイン時間|current_sign_in_at|datetime|||||ログイン時間|
+|18|ログアウト時間|last_sign_in_at|datetime|||||ログアウト時間|
+|19|ログインIPアドレス|current_sign_in_ip|string|255||||ログインIPアドレス|
+|20|ログアウトIPアドレス|last_sign_in_ip|string|255||||ログアウトIPアドレス|
 
 
 ### テーブル論理名02
@@ -324,5 +327,7 @@ tweet
   SEO用の gem を追加。metaタグを管理する
   - gem meta-tags
 - 19/12/11 version2.1<br>
-  - tweetテーブルに textカラムを追加。API実装時に不要であれば削除
+  - tweetテーブルに textカラムを追加。TwitterAPI実装時に不要であれば削除
   - endemic カラムのデータ型を、bigint に変更
+- 19/12/12 version2.2<br>
+  - TwitterAPIのリクエスト負荷軽減のために、userテーブルに description カラム・website カラム・twitter カラムを追加

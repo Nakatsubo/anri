@@ -17,7 +17,10 @@ class User < ApplicationRecord
         image: auth.info.image,
         name: auth.info.name,
         nickname: auth.info.nickname,
-        location: auth.info.location
+        location: auth.info.location,
+        description: auth.info.description,
+        website: auth.info.urls[:Website],
+        twitter: auth.info.urls[:Twitter]
       )
     end
     user
