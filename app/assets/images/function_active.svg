@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="26" viewBox="0 0 45 26">
+  <g id="group" data-name="group" transform="translate(-592 -138)">
+    <g id="group" data-name="group" transform="translate(-80 122)">
+      <circle id="circle" data-name="circle" cx="4" cy="4" r="4" transform="translate(672 34)" fill="#f45d22"/>
+      <circle id="circle" data-name="circle" cx="4" cy="4" r="4" transform="translate(688 34)" fill="#f45d22"/>
+      <circle id="circle" data-name="circle" cx="4" cy="4" r="4" transform="translate(704 34)" fill="#f45d22"/>
+    </g>
+    <circle id="circle" data-name="circle" cx="5" cy="5" r="5" transform="translate(627 138)" fill="#f45d22"/>
+  </g>
+</svg>
