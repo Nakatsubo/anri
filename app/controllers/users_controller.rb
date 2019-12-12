@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   def show
     @photo = Photo.new
     @tweet = Tweet.new
+    @client = set_client
+    # binding.pry
   end
 
 end

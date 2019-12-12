@@ -35,7 +35,7 @@ button {
     position: absolute;
   }
   .modal_content {
-    max-width: 67rem;
+    max-width: 56rem;
     width: 80%;
     height: auto;
     position: absolute;
@@ -46,6 +46,7 @@ button {
     border-radius: 4px;
     .modal_func {
       ul {
+        display: block;
         text-align: center;
         li {
           border-bottom: 1px solid $lightgray;

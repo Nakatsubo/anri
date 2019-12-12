@@ -20,3 +20,56 @@
 img {
   max-width: 50px;
 }
+
+/*
+#container {
+  position: relative;
+}
+*/
+
+.left_aside {
+  .nav {
+    display: block;
+    ul {
+      li.pc, img.pc {
+        display: block;
+      }
+      li.sp, img.sp {
+        display: none;
+      }
+    }
+  }
+  @include sp {
+    position: absolute;
+    bottom: 0;
+    .nav {
+      display: flex;
+      ul {
+        display: flex;
+        align-items: flex-end;
+        li.pc, img.pc {
+          display: none;
+        }
+        li.sp, img.sp {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  .nav.pc {
+    display: block;
+    @include sp {
+      display: none;
+    }
+  }
+}
+
+.nav.sp {
+  display: none;
+  @include sp {
+    display: block;
+  }
+}

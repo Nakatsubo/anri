@@ -6,26 +6,7 @@ nav.nav.pc
     p
       small ©︎ANRI 2019
 nav.nav.sp
-  - if user_signed_in?
-    ul
-      li
-        = link_to user_path(current_user.name)
-          = image_tag 'home.svg'
-      li
-        /root_pathはダミー。searchs_path（仮）にリンクさせる
-        = link_to root_path
-          = image_tag 'search.svg'
-      li
-        /モーダルにする
-        .modal_btn
-          button id="footer-modal-open" class="js-modal-open"
-            = image_tag "function.svg"
-        = render 'components/footer/function'
-      li
-        /root_pathはダミー。new_photos_pathにリンクさせる
-        = link_to root_path
-          = image_tag 'new_nav.svg'
-  - else
+  - unless user_signed_in?
     .copyright
     p
       small ©︎ANRI 2019
