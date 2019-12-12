@@ -5,7 +5,8 @@ class UsersController < ApplicationController
     @photo = Photo.new
     @tweet = Tweet.new
     @client = set_client
-    # binding.pry
+    @client.home_timeline
+    binding.pry
   end
 
 end

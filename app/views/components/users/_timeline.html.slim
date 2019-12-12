@@ -1,0 +1,20 @@
+h2 タイムライン
+- @client.home_timeline.each do |tweet|
+  .profile.tweet
+    p.image
+      - if current_user.image.present?
+        img src="#{current_user.image}"
+      - else
+        = image_tag 'noimage_profile.jpg'
+    p.name
+      = current_user.name
+      span = image_tag 'profile_logo.svg'
+  .text.tweet
+    p = tweet.text
+  .date.tweet
+    p = tweet.created_at
+  .info
+    /何の情報を取得するのか見直す。メンションがある場合はマークを出すとか。
+    /p.listed_count = tweet.listed_count
+    p.retweet_count = tweet.retweet_count
+    p.favorite_count = tweet.favorite_count
