@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="83" height="40" viewBox="0 0 83 40">
-  <g id="group" data-name="group" transform="translate(-652 -139)">
-    <g id="group" data-name="group" transform="translate(652 139)">
-      <path id="path" data-name="path" d="M41.5,4.435C41.5,1.475,45.945,0,45.945,0H16.3L0,40H13.33L16.3,32.605h23.71L42.97,40H56.3S41.5,7.4,41.5,4.435ZM20.75,22.225l4.435-10.37h5.93l4.45,10.37Z" transform="translate(0 0)" fill="#f45d22"/>
-      <path id="ic_add_24px" d="M21.889,14.651H14.651v7.238H12.238V14.651H5V12.238h7.238V5h2.413v7.238h7.238Z" transform="translate(45.666 -5)" fill="#f45d22"/>
-    </g>
-    <circle id="circle" data-name="circle" cx="5" cy="5" r="5" transform="translate(725 139)" fill="#f45d22"/>
-  </g>
-</svg>
