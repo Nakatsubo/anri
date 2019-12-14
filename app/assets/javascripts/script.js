@@ -39,8 +39,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
   footer_modal_open.addEventListener('click', (e) => {
     home_is_active.style.display = 'none';
     home_is_inactive.style.display = 'block';
-    function_is_active.style.display = 'none';
-    function_is_inactive.style.display = 'block';
+    //function_is_active.style.display = 'none';
+    //function_is_inactive.style.display = 'block';
     let modal = document.getElementById('footer-modal');
     $(modal).fadeIn(); // by jQuery
     return false;
@@ -50,8 +50,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
   footer_modal_close.addEventListener('click', (e) => {
     home_is_active.style.display = 'block';
     home_is_inactive.style.display = 'none';
-    function_is_active.style.display = 'block';
-    function_is_inactive.style.display = 'none';
+    //function_is_active.style.display = 'block';
+    //function_is_inactive.style.display = 'none';
     let modal = document.getElementById('footer-modal');
     $(modal).fadeOut(); // by jQuery
     return false;
