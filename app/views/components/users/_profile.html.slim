@@ -1,6 +1,6 @@
 p.image
-  - if current_user.image.present?
-    img src="#{current_user.image}"
+  - if @client.user.profile_image_url(:original).present?
+    img src="#{@client.user.profile_image_url(:original)}"
   - else
     = image_tag 'noimage_profile.jpg'
 .wrap

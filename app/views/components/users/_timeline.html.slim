@@ -1,5 +1,5 @@
 h2 タイムライン
-- @client.home_timeline.each do |tweet|
+- @tweets.each do |tweet|
   .profile.tweet
     p.image
       - if current_user.image.present?
@@ -10,11 +10,20 @@ h2 タイムライン
       = current_user.name
       span = image_tag 'profile_logo.svg'
   .text.tweet
-    p = tweet.text
-  .date.tweet
-    p = tweet.created_at
+    = tweet.text
+  .hushtag.tweet
+    = tweet.hushtag
+  .photo.tweet
+    = image_tag set_photo_uri(tweet.photo.photo.blob.key)
+  .date #{time_ago_in_words(tweet.created_at)}前
   .info
-    /何の情報を取得するのか見直す。メンションがある場合はマークを出すとか。
-    /p.listed_count = tweet.listed_count
-    p.retweet_count = tweet.retweet_count
-    p.favorite_count = tweet.favorite_count
+    /ここだけしっかりsvgの設定ができているので他も直す
+    p.mention
+      - if @client.mentions_timeline(since_id: tweet.endemic)
+        = embedded_svg('alert.svg', class: 'alert index')
+    p.retweet_count
+      = embedded_svg('retweet.svg', class: 'retweet_count index')
+      = @client.status(tweet.endemic).retweet_count
+    p.favorite_count
+      = embedded_svg('favorite.svg', class: 'favorite_count index')
+      = @client.status(tweet.endemic).favorite_count

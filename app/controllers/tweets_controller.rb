@@ -6,7 +6,8 @@ class TweetsController < ApplicationController
       @tweet = Tweet.new(tweet_params)
       @photo = Photo.recent(current_user)
       @photo_uri = set_uri(@photo.photo.blob.key)
-      @result = AnriTwitter.new(@tweet.text.to_s, @photo_uri.to_s).tweet
+      @set_tweet = set_text(@tweet.text, @tweet.hushtag)
+      @result = AnriTwitter.new(@set_tweet.to_s, @photo_uri.to_s).tweet
       set_tweet(@tweet, @result, current_user, @photo)
       if @tweet.save
         render 'components/posts/posts_index', local: { tweet: @tweet, photo_uri: @photo_uri }
@@ -21,7 +22,11 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:text)
+    params.require(:tweet).permit(:text, :hushtag)
+  end
+
+  def set_text(text, hushtag)
+    text + " " + hushtag
   end
 
   def set_tweet(tweet, result, current_user, photo)

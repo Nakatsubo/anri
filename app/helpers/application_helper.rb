@@ -1,5 +1,6 @@
 module ApplicationHelper
   # set_meta_tag
+  # OGP画像とアカウントを作成する
   def default_meta_tags
     {
       title:       'title',
@@ -31,5 +32,19 @@ module ApplicationHelper
       #   app_id: '***************'
       # }
     }
+  end
+
+  def set_photo_uri(key)
+    'https://anri-development.s3-ap-northeast-1.amazonaws.com/' + key
+  end
+
+  def embedded_svg filename, options={}
+    file = File.read(Rails.root.join('app', 'assets', 'images', filename))
+    doc = Nokogiri::HTML::DocumentFragment.parse file
+    svg = doc.at_css 'svg'
+    if options[:class].present?
+      svg['class'] = options[:class]
+    end
+    doc.to_html.html_safe
   end
 end
