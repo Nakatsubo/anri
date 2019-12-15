@@ -7,6 +7,28 @@ class ApplicationController < ActionController::Base
     'https://anri-development.s3-ap-northeast-1.amazonaws.com/' + data
   end
 
+  def set_labels(label, photo)
+    @labels = ""
+    @photo.labels.each do |label|
+    @labels << "#" + label.label1 + " " +
+               "#" + label.label2 + " " +
+               "#" + label.label3 + " " +
+               "#" + label.label4 + " " +
+               "#" + label.label5
+    end
+    @labels
+  end
+
+  def set_text(text, hushtag)
+    text + " " + hushtag
+  end
+
+  def set_tweet(tweet, result, current_user, photo)
+    tweet.endemic = result.id
+    tweet.user_id = current_user.id
+    tweet.photo_id = photo.id
+  end
+
   private
 
   def set_client

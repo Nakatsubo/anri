@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, only: %i(create)
+  before_action :set_tweets, only: %i(create)
 
   def create
     if params[:tweet][:text].present?
@@ -19,19 +20,16 @@ class TweetsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
+
+  def set_tweets
+    @tweet = Tweet.find(params[:id])
+  end
 
   def tweet_params
     params.require(:tweet).permit(:text, :hushtag)
-  end
-
-  def set_text(text, hushtag)
-    text + " " + hushtag
-  end
-
-  def set_tweet(tweet, result, current_user, photo)
-    tweet.endemic = result.id
-    tweet.user_id = current_user.id
-    tweet.photo_id = photo.id
   end
 end
