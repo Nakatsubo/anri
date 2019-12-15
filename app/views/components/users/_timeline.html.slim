@@ -1,29 +1,23 @@
 h2 タイムライン
 - @tweets.each do |tweet|
-  .profile.tweet
-    p.image
-      - if current_user.image.present?
-        img src="#{current_user.image}"
-      - else
-        = image_tag 'noimage_profile.jpg'
-    p.name
-      = current_user.name
-      span = image_tag 'profile_logo.svg'
-  .text.tweet
-    = tweet.text
-  .hushtag.tweet
-    = tweet.hushtag
-  .photo.tweet
-    = image_tag set_photo_uri(tweet.photo.photo.blob.key)
-  .date #{time_ago_in_words(tweet.created_at)}前
-  .info
-    /ここだけしっかりsvgの設定ができているので他も直す
-    p.mention
-      - if @client.mentions_timeline(since_id: tweet.endemic)
-        = embedded_svg('alert.svg', class: 'alert index')
-    p.retweet_count
-      = embedded_svg('retweet.svg', class: 'retweet_count index')
-      = @client.status(tweet.endemic).retweet_count
-    p.favorite_count
-      = embedded_svg('favorite.svg', class: 'favorite_count index')
-      = @client.status(tweet.endemic).favorite_count
+  = link_to tweet_path(tweet.id)
+    .profile.tweet
+      = render 'components/users/profile'
+    .text.tweet
+      = tweet.text
+    .hushtag.tweet
+      = tweet.hushtag
+    .photo.tweet
+      = image_tag set_photo_uri(tweet.photo.photo.blob.key)
+    .date #{time_ago_in_words(tweet.created_at)}前
+    .info
+      /ここだけしっかりsvgの設定ができているので他も直す
+      p.mention
+        - if @client.mentions_timeline(since_id: tweet.endemic)
+          = embedded_svg('alert.svg', class: 'alert index')
+      p.retweet_count
+        = embedded_svg('retweet.svg', class: 'retweet_count index')
+        = @client.status(tweet.endemic).retweet_count
+      p.favorite_count
+        = embedded_svg('favorite.svg', class: 'favorite_count index')
+        = @client.status(tweet.endemic).favorite_count
