@@ -74,10 +74,11 @@ img {
   }
 }
 
-.retweet_count.index, .favorite_count.index {
+/* btn //////////*/
+.alert.index, .retweet_count.index, .favorite_count.index, .dustbox.index {
   fill: $demigray;
 }
 
-.alert.index {
-  fill: $lightorange;
+.back.detail, .retweet.detail {
+  fill: $darkorange;
 }

@@ -10,14 +10,16 @@ h2 タイムライン
     .photo.tweet
       = image_tag set_photo_uri(tweet.photo.photo.blob.key)
     .date #{time_ago_in_words(tweet.created_at)}前
-    .info
+    .wrap
       /ここだけしっかりsvgの設定ができているので他も直す
-      p.mention
-        - if @client.mentions_timeline(since_id: tweet.endemic)
+      .info
+        p.mention
           = embedded_svg('alert.svg', class: 'alert index')
-      p.retweet_count
-        = embedded_svg('retweet.svg', class: 'retweet_count index')
-        = @client.status(tweet.endemic).retweet_count
-      p.favorite_count
-        = embedded_svg('favorite.svg', class: 'favorite_count index')
-        = @client.status(tweet.endemic).favorite_count
+        p.retweet_count
+          = embedded_svg('retweet.svg', class: 'retweet_count index')
+          = @client.status(tweet.endemic).retweet_count
+        p.favorite_count
+          = embedded_svg('favorite.svg', class: 'favorite_count index')
+          = @client.status(tweet.endemic).favorite_count
+      .dustbox
+        = embedded_svg('dustbox.svg', class: 'dustbox index')

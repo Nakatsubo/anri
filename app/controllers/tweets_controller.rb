@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, only: %i(create)
-  before_action :set_tweets, only: %i(create)
+  before_action :set_tweets, only: %i(show)
 
   def create
     if params[:tweet][:text].present?
@@ -21,12 +21,19 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @photo = Photo.new
+    @tweet = Tweet.new
+    @retweet = Retweet.new
+    @client = set_client
+    @photo_uri = set_uri(@this_tweet.photo.photo.blob.key)
+    @set_labels = AnriNatto.new(@client).set_labels
+    binding.pry
   end
 
   private
 
   def set_tweets
-    @tweet = Tweet.find(params[:id])
+    @this_tweet = Tweet.find(params[:id])
   end
 
   def tweet_params
