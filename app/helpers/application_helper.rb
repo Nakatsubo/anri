@@ -34,10 +34,6 @@ module ApplicationHelper
     }
   end
 
-  def set_photo_uri(key)
-    'https://anri-development.s3-ap-northeast-1.amazonaws.com/' + key
-  end
-
   def embedded_svg filename, options={}
     file = File.read(Rails.root.join('app', 'assets', 'images', filename))
     doc = Nokogiri::HTML::DocumentFragment.parse file
@@ -46,5 +42,13 @@ module ApplicationHelper
       svg['class'] = options[:class]
     end
     doc.to_html.html_safe
+  end
+
+  def set_photo_uri(key)
+    'https://anri-development.s3-ap-northeast-1.amazonaws.com/' + key
+  end
+
+  def convert_time(time)
+    time.strftime("%p%I:%M・%Y年%m月%d日")
   end
 end

@@ -1,21 +1,8 @@
 p.image
-  - if @client.user.profile_image_url(:original).present?
-    img src="#{@client.user.profile_image_url(:original)}"
+  - if current_user.image.present?
+    img src="#{current_user.image}"
   - else
     = image_tag 'noimage_profile.jpg'
-.wrap
-  p.name
-    = current_user.name
-    span = image_tag 'profile_logo.svg'
-  p.nickname
-    = current_user.nickname
-p.introduction
-  = current_user.description
-.others
-  p.location
-    span = image_tag 'location.svg'
-    = current_user.location
-  p.website
-    span = image_tag 'website.svg'
-    = link_to "#{current_user.website}", target: '_blank'
-      = current_user.website
+p.name
+  = current_user.name
+  span = image_tag 'profile_logo.svg'

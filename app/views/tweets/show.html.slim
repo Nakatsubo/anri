@@ -1,0 +1,15 @@
+- set_meta_tags title: @this_tweet.user.name + " | ANRI", description: @this_tweet.user.description
+.content.detail
+  .tit
+    p.btn.back
+      = link_to user_path(current_user.name)
+        = embedded_svg('back.svg', class: 'back detail')
+    h2 ツイート
+    .retweet
+      .modal_btn.new_btn
+        button id="retweet-modal-open" class="js-modal-open"
+          = image_tag 'new_retweet.svg', class: 'retweet detail'
+      = render 'components/posts/retweets_index', local: { tweet: @this_tweet, photo_uri: @photo_uri }
+  .main
+    p ツイート詳細のダミーページよ（まだ工事中だよ）
+    p.date #{convert_time(@this_tweet.created_at)}・#{link_to "Twitter", @this_tweet.user.twitter, target: "_blank"}

@@ -26,6 +26,21 @@ window.addEventListener('DOMContentLoaded', (e) => {
     return false;
   }, false);
 
+  // retweet-modal
+  const retweet_modal_open = document.getElementById('retweet-modal-open');
+  retweet_modal_open.addEventListener('click', (e) => {
+    let modal = document.getElementById('retweet-modal');
+    $(modal).fadeIn(); // by jQuery
+    return false;
+  }, false);
+
+  const retweet_modal_close = document.getElementById('retweet-modal-close');
+  retweet_modal_close.addEventListener('click', (e) => {
+    let modal = document.getElementById('retweet-modal');
+    $(modal).fadeOut(); // by jQuery
+    return false;
+  }, false);
+
   // function-modal
   const footer_modal_open = document.getElementById('footer-modal-open');
   footer_modal_open.addEventListener('click', (e) => {

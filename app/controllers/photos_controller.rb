@@ -25,16 +25,4 @@ class PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:photo)
   end
-
-  def set_labels(label, photo)
-    @labels = ""
-    @photo.labels.each do |label|
-    @labels << "#" + label.label1 + " " +
-               "#" + label.label2 + " " +
-               "#" + label.label3 + " " +
-               "#" + label.label4 + " " +
-               "#" + label.label5
-    end
-    @labels
-  end
 end

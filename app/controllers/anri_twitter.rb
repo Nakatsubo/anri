@@ -2,7 +2,7 @@ class AnriTwitter
   require 'twitter'
   require 'open-uri'
 
-  attr_accessor :tweet, :image
+  attr_accessor :tweet, :photo_uri
 
   def initialize(tweet, photo_uri)
     @tweet = tweet

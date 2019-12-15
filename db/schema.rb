@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_102549) do
+ActiveRecord::Schema.define(version: 2019_12_15_114315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 2019_12_14_102549) do
     t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
+  create_table "retweets", force: :cascade do |t|
+    t.text "text"
+    t.bigint "tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "hushtag"
+    t.index ["tweet_id"], name: "index_retweets_on_tweet_id"
+  end
+
   create_table "tweets", force: :cascade do |t|
     t.bigint "endemic", null: false
     t.bigint "user_id"
@@ -97,6 +106,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_102549) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "labels", "photos"
   add_foreign_key "photos", "users"
+  add_foreign_key "retweets", "tweets"
   add_foreign_key "tweets", "photos"
   add_foreign_key "tweets", "users"
 end

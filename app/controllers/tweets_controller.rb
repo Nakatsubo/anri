@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, only: %i(create)
+  before_action :set_tweets, only: %i(show)
 
   def create
     if params[:tweet][:text].present?
@@ -19,19 +20,23 @@ class TweetsController < ApplicationController
     end
   end
 
+  def show
+    @photo = Photo.new
+    @tweet = Tweet.new
+    @retweet = Retweet.new
+    @client = set_client
+    @photo_uri = set_uri(@this_tweet.photo.photo.blob.key)
+    @set_labels = AnriNatto.new(@client).set_labels
+    binding.pry
+  end
+
   private
+
+  def set_tweets
+    @this_tweet = Tweet.find(params[:id])
+  end
 
   def tweet_params
     params.require(:tweet).permit(:text, :hushtag)
-  end
-
-  def set_text(text, hushtag)
-    text + " " + hushtag
-  end
-
-  def set_tweet(tweet, result, current_user, photo)
-    tweet.endemic = result.id
-    tweet.user_id = current_user.id
-    tweet.photo_id = photo.id
   end
 end
