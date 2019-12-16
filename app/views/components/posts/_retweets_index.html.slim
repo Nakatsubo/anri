@@ -1,9 +1,0 @@
-div id="retweet-modal" class="modal"
-  div id="retweet-modal-close" class="modal_bg js-modal-close"
-  .modal_content
-    .modal_func
-      .profile
-        = render 'components/posts/profile'
-      #retweet.retweet
-        #retweet_error.error
-        = render 'components/posts/retweets_form', local: { tweet: @this_tweet, photo_uri: @photo_uri }

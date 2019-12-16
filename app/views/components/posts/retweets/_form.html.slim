@@ -1,12 +1,15 @@
 .preview
   = image_tag @photo_uri
 .form_tweet
-  = form_with scope: :tweet, url: tweets_path(@tweet) do |f|
+  = form_with scope: :retweet, url: retweets_path(@retweet) do |f|
     .tweet
-      = f.text_field :hushtag, value: @set_labels
-      = f.text_area :text, placeholder: "いまどうしてる？"
+      = f.hidden_field :photo_id, value: @this_tweet.photo_id
+      = f.hidden_field :endemic, value: @this_tweet.endemic
+      = f.text_field :hushtag, value: @reply_labels
+      = f.text_area :text, value: "@#{current_user.nickname}"
       .attention
         ul
+          li ・ハッシュタグはあなたへのリプライを元に、ホットワードを自動作成しています。
           li ・発行されたハッシュタグは、英語を日本語に自動翻訳しています。
           li ・翻訳が意図に反している場合など、ご自身でハッシュタグを修正してください。
           li ・本文はハッシュタグを含め、116文字以内で投稿してください。

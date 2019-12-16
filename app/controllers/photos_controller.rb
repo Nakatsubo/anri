@@ -6,17 +6,14 @@ class PhotosController < ApplicationController
       @photo = Photo.new(photo_params)
       @photo_uri = set_uri(@photo.photo.blob.key)
       @photo.user_id = current_user.id
-      @labels = AnriGoogleCloudVision.new(@photo_uri).response
-      @label = @photo.labels.build(@labels)
-      @label.save
-      @set_labels = set_labels(@labels, @photo)
+      @labels = AnriGoogleCloudVision.new(@photo_uri).set_labels
       if @photo.save
-        render 'components/posts/tweets_index', local: { photo_uri: @photo_uri, label: @set_labels }
+        render 'components/posts/tweets/index', local: { photo_uri: @photo_uri, label: @set_labels }
       else
-        render 'components/posts/photos_index'
+        render 'components/posts/photos/error'
       end
     else
-      render 'components/posts/photos_index'
+      render 'components/posts/photos/error'
     end
   end
 

@@ -1,0 +1,5 @@
+p ajaxのテストだよお
+/p.image = image_tag @photo_uri
+/p.text = @tweet.text
+/p.hushtag = @tweet.hushtag
+/p.date #{time_ago_in_words(@tweet.created_at)}前
