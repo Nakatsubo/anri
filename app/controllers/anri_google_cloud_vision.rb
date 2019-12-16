@@ -27,15 +27,20 @@ class AnriGoogleCloudVision
       credentials: Rails.application.credentials.google[:api_key]
     )
     target_language = "ja"
-    traLabels = []
+    @traLabels = []
     valLabels.each do |label|
       tra = translate.translate label, to: target_language
-      traLabels << tra.text
+      @traLabels << tra.text
     end
+    @traLabels
+  end
 
-    keyLabel = ["label1", "label2", "label3", "label4", "label5"]
-    aryLabel = [keyLabel, traLabels].transpose
-    labels = Hash[*aryLabel.flatten]
+  def set_labels
+    response
+    labels = ""
+    @traLabels.each do |label|
+      labels << "#" + label + " "
+    end
     labels
   end
 end

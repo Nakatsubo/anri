@@ -7,17 +7,6 @@ class ApplicationController < ActionController::Base
     'https://anri-development.s3-ap-northeast-1.amazonaws.com/' + data
   end
 
-  def set_labels(label, data)
-    @labels = ""
-    @photo.labels.each do |label|
-    @labels << "#" + label.label1 + " " +
-               "#" + label.label2 + " " +
-               "#" + label.label3 + " " +
-               "#" + label.label4 + " " +
-               "#" + label.label5
-    end
-  end
-
   def set_text(text, hushtag)
     text + " " + hushtag
   end

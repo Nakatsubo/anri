@@ -3,11 +3,11 @@ div id="photo-modal" class="modal"
   .modal_content
     .modal_func
       .profile
-        = render 'components/posts/profile'
+        = render 'components/posts/common/profile'
       #photo.photo
         #photo_error.error
-        = render 'components/posts/photos_form'
-      #tweet.tweet
+        = render 'components/posts/photos/form'
+      #post_tweet.post_tweet
       #post.post
-      .btn.back
-        = render 'components/posts/btn'
+    .btn.back
+      = render 'components/posts/common/btn'

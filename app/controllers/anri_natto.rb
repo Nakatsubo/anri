@@ -39,7 +39,7 @@ class AnriNatto
     @often_used_five_words = words.first(5)
   end
 
-  def set_labels
+  def set_reply_labels
     set_words
     @labels = ""
     @often_used_five_words.each do |label|

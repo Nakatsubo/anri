@@ -9,7 +9,7 @@
       .modal_btn.new_btn
         button id="retweet-modal-open" class="js-modal-open"
           = image_tag 'new_retweet.svg', class: 'retweet detail'
-      = render 'components/posts/retweets_index', local: { tweet: @this_tweet, photo_uri: @photo_uri }
+      = render 'components/posts/retweets/index', local: { tweet: @this_tweet, photo_uri: @photo_uri }
   .main
     p ツイート詳細のダミーページよ（まだ工事中だよ）
     p.date #{convert_time(@this_tweet.created_at)}・#{link_to "Twitter", @this_tweet.user.twitter, target: "_blank"}

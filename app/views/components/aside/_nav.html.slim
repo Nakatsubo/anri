@@ -18,7 +18,7 @@
           button id="photo-modal-open" class="js-modal-open"
             = image_tag 'new_tweet.svg', class: 'pc'
             = image_tag 'new_nav.svg', id: 'nav-is-active', class: 'sp'
-        = render 'components/posts/photos_index'
+        = render 'components/posts/photos/index'
       li.pc
         /root_pathはダミー。searchs_path（仮）にリンクさせる
         = link_to root_path
