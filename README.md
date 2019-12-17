@@ -169,7 +169,7 @@ ActiveStorage::Blobとphotoモデルの関連付け
 ~~label~~
 
 ### ~~コメント05~~
-~~画像情報に基づくラベルを管理する~~
+~~画像情報に基づくラベルを管理する~~<br>
 ツイートのcreateにあたりDBに保存する必然性がなくなったため、削除
 
 |#|カラム論理名|カラム物理名|型|桁|NOTNULL|主キー|インデックス|コメント|
@@ -190,7 +190,7 @@ ActiveStorage::Blobとphotoモデルの関連付け
 ~~reply_label~~
 
 ### ~~コメント06~~
-~~リプライ情報に基づくラベルを管理する~~
+~~リプライ情報に基づくラベルを管理する~~<br>
 リプライのcreateにあたりDBに保存する必然性がなくなったため、削除
 
 |#|カラム論理名|カラム物理名|型|桁|NOTNULL|主キー|インデックス|コメント|
@@ -204,13 +204,13 @@ ActiveStorage::Blobとphotoモデルの関連付け
 |7|外部キー|photo_id|bigint|255|○||○|外部キー|
 
 
-### テーブル論理名07
+### テーブル論理名05
 ツイート情報の管理
 
-### テーブル物理名07
+### テーブル物理名05
 tweet
 
-### コメント07
+### コメント05
 投稿したtweetのid情報を管理する
 
 |#|カラム論理名|カラム物理名|型|桁|NOTNULL|主キー|インデックス|コメント|
@@ -221,6 +221,22 @@ tweet
 |4|ハッシュタグ|hushtag|text|116||||ハッシュタグ|
 |5|外部キー|user_id|bigint|255|||○|外部キー|
 |6|外部キー|photo_id|bigint|255|||○|外部キー|
+
+
+### テーブル論理名06
+リツーイト情報の管理
+
+### テーブル物理名06
+reply
+
+### コメント06
+投稿したreplyのステータス情報を管理する
+
+|#|カラム論理名|カラム物理名|型|桁|NOTNULL|主キー|インデックス|コメント|
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|1|ID|id|integer|15|○|||ID|
+|2|ステータス|status|integer|15||||ステータス|
+|3|外部キー|tweet_id|bigint|255|||○|外部キー|
 
 
 ## ER図
@@ -336,10 +352,10 @@ tweet
   - endemic カラムのデータ型を、bigint に変更
 - 19/12/12 version2.2<br>
   - ER図 を修正
-  - TwitterAPIのリクエスト負荷軽減のために、userテーブルに description カラム・website カラム・twitter カラムを追加
+  - userテーブルに description カラム・website カラム・twitter カラムを追加。TwitterAPIのリクエスト負荷軽減のため
 - 19/12/14 version2.3<br>
   - ER図 を修正
-  - TwitterAPIのリクエスト負荷軽減のために、tweetテーブルに hushtag カラムを追加
+  - tweetテーブルに hushtag カラムを追加。TwitterAPIのリクエスト負荷軽減のため
 - 19/12/15 version2.4<br>
   - ER図 を修正
   - retweet モデルを追加。tweet モデルと retweet モデルを分割しないと、createアクションを捌けないため
@@ -347,8 +363,12 @@ tweet
 - 19/12/16 version2.5<br>
   - ER図 を修正
   - label モデルを削除。モデルの存在自体が不要となったため
+- 19/12/17 version2.6<br>
+  - ER図 を修正
+  - reply モデルを作成。reply のステータスを管理する必要があるため
 
 
 ## メモ
-- Herokuでの認証には、TwitterApp の Callback URL を変更する。<br>
+- Herokuでの認証には、TwitterApp の Callback URL を変更する<br>
   開発環境では http://localhost:3000/ Callback URL とする
+- svgファイルの設定方法が間違っている箇所が多々あるので修正する
