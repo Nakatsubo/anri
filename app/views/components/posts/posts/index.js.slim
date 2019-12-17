@@ -1,2 +1,2 @@
-| $("#post").html("#{escape_javascript(render partial: '/components/posts/posts/index', local: { tweet: @tweet, photo_uri: @photo_uri })}");
+| $("#post").html("#{escape_javascript(render '/components/posts/posts/index', tweet: @tweet, photo_uri: @photo_uri)}");
 | $("#post_tweet").hide();

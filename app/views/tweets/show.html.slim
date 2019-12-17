@@ -9,7 +9,7 @@
       .modal_btn.new_btn
         button id="retweet-modal-open" class="js-modal-open"
           = image_tag 'new_retweet.svg', class: 'retweet detail'
-      = render 'components/posts/retweets/index', local: { tweet: @this_tweet, photo_uri: @photo_uri }
+      = render 'components/posts/retweets/index', tweet: @this_tweet, photo_uri: @photo_uri
   .main
     p ツイート詳細のダミーページよ（まだ工事中だよ）
     p.date #{convert_time(@this_tweet.created_at)}・#{link_to "Twitter", @this_tweet.user.twitter, target: "_blank"}
@@ -18,7 +18,7 @@
         = embedded_svg('alert.svg', class: 'alert detail')
       p.retweet_count
         #post_reply.post_reply
-          = render 'components/posts/replys/index', local: { this_tweet: @this_tweet }
+          = render 'components/posts/replys/index', this_tweet: @this_tweet
         = @client.status(@this_tweet.endemic).retweet_count
       p.favorite_count
         = embedded_svg('favorite.svg', class: 'favorite_count detail')

@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
       @result = AnriTwitter.new(@set_tweet.to_s, @photo_uri.to_s).tweet
       set_tweet(@tweet, @result, current_user, @photo)
       if @tweet.save
-        render 'components/posts/posts/index', local: { tweet: @tweet, photo_uri: @photo_uri }
+        render 'components/posts/posts/index', tweet: @tweet, photo_uri: @photo_uri
       else
         render 'components/posts/posts/error'
       end
