@@ -13,3 +13,15 @@
   .main
     p ツイート詳細のダミーページよ（まだ工事中だよ）
     p.date #{convert_time(@this_tweet.created_at)}・#{link_to "Twitter", @this_tweet.user.twitter, target: "_blank"}
+    .info
+      p.mention
+        = embedded_svg('alert.svg', class: 'alert detail')
+      p.retweet_count
+        #post_reply.post_reply
+          = render 'components/posts/replys/index', local: { this_tweet: @this_tweet }
+        = @client.status(@this_tweet.endemic).retweet_count
+      p.favorite_count
+        = embedded_svg('favorite.svg', class: 'favorite_count detail')
+        = @client.status(@this_tweet.endemic).favorite_count
+    .dustbox
+      = embedded_svg('dustbox.svg', class: 'dustbox detail')

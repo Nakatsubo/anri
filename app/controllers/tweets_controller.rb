@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: %i(create)
+  before_action :authenticate_user!, only: %i(create show)
   before_action :set_tweets, only: %i(show)
 
   def create
