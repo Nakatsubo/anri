@@ -372,3 +372,5 @@ reply
 - Herokuでの認証には、TwitterApp の Callback URL を変更する<br>
   開発環境では http://localhost:3000/ Callback URL とする
 - svgファイルの設定方法が間違っている箇所が多々あるので修正する
+- NOT NULL制約を最終的に整理する
+
