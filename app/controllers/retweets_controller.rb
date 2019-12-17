@@ -6,10 +6,14 @@ class RetweetsController < ApplicationController
       @retweet = Tweet.new(retweet_params)
       @retweet.user_id = current_user.id
       @client = set_client
-      @set_retweet = set_text(@retweet.text, @retweet.hushtag)
-      @result = AnriRetweet.new(@client, @retweet.endemic, @set_retweet).reply
-      if @retweet.save
-        render 'components/posts/retweets/posts_index', local: { retweet: @retweet }
+      if @retweet.text.present?
+        @set_retweet = set_text(@retweet.text, @retweet.hushtag)
+        @result = AnriRetweet.new(@client, @retweet.endemic, @set_retweet).reply
+        if @retweet.save
+          render 'components/posts/retweets/posts_index', retweet: @retweet
+        else
+          render 'components/posts/retweets/error'
+        end
       else
         render 'components/posts/retweets/error'
       end

@@ -6,7 +6,7 @@ div id="retweet-modal" class="modal"
         = render 'components/posts/common/profile'
       #retweet.retweet
         #retweet_error.error
-        = render 'components/posts/retweets/form', local: { tweet: @this_tweet, photo_uri: @photo_uri }
+        = render 'components/posts/retweets/form', tweet: @this_tweet, photo_uri: @photo_uri
       #post_retweet.post_retweet
     .btn.back
       = render 'components/posts/common/btn'

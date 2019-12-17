@@ -1,2 +1,2 @@
-| $("#post_retweet").html("#{escape_javascript(render partial: '/components/posts/retweets/posts_index', local: { retweet: @retweet })}");
+| $("#post_retweet").html("#{escape_javascript(render '/components/posts/retweets/posts_index', retweet: @retweet)}");
 | $("#retweet").hide();

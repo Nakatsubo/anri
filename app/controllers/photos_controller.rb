@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
       @photo.user_id = current_user.id
       @labels = AnriGoogleCloudVision.new(@photo_uri).set_labels
       if @photo.save
-        render 'components/posts/tweets/index', local: { photo_uri: @photo_uri, label: @set_labels }
+        render 'components/posts/tweets/index', photo_uri: @photo_uri, label: @set_labels
       else
         render 'components/posts/photos/error'
       end
