@@ -1,0 +1,15 @@
+.count
+  p.retweet_count
+    strong = @client.status(@this_tweet.endemic).retweet_count
+    span 件のリツイート
+  p.favorite_count
+    strong = @client.status(@this_tweet.endemic).favorite_count
+    span 件のいいね
+.image
+  p.mention_image
+    = embedded_svg('alert.svg', class: 'alert detail')
+  p.retweet_image
+    #post_reply.post_reply
+      = render 'components/posts/replys/index', this_tweet: @this_tweet
+  p.favorite_image
+    = embedded_svg('favorite.svg', class: 'favorite_count detail')
