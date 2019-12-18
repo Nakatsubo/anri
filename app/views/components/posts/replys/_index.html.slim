@@ -1,6 +1,6 @@
 - if @this_tweet.replies.present?
   = link_to reply_path(@this_tweet), method: :delete, remote: true
-    = embedded_svg('retweet.svg', class: 'retweet_count detail active')
+    = embedded_svg('retweet.svg', class: 'retweet_image detail active')
 - else
   = link_to replys_path(@this_tweet), method: :post, remote: true
-    = embedded_svg('retweet.svg', class: 'retweet_count detail noactive')
+    = embedded_svg('retweet.svg', class: 'retweet_image detail noactive')

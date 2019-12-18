@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: %i(create show)
-  before_action :set_tweets, only: %i(show)
+  before_action :authenticate_user!, only: %i(show create destroy)
+  before_action :set_tweets, only: %i(show destroy)
 
   def create
     if tweet_params.present?
@@ -31,6 +31,19 @@ class TweetsController < ApplicationController
     @client = set_client
     @photo_uri = set_uri(@this_tweet.photo.photo.blob.key)
     @reply_labels = AnriNatto.new(@client).set_reply_labels
+  end
+
+  def destroy
+    @set_tweet = set_client
+    if @set_tweet.destroy_tweet(@this_tweet.endemic)
+      if @this_tweet.destroy
+        redirect_to user_path(current_user.name)
+      else
+        render :create
+      end
+    else
+      render :create
+    end
   end
 
   private

@@ -1,15 +1,15 @@
 h2 タイムライン
 - @tweets.each do |tweet|
   = link_to tweet_path(tweet.id)
-    .profile.tweet
+    p.profile.tweet
       = render 'components/users/profile'
-    .text.tweet
+    p.text.tweet
       = tweet.text
-    .hushtag.tweet
+    p.hushtag.tweet
       = tweet.hushtag
-    .photo.tweet
+    p.photo.tweet
       = image_tag set_photo_uri(tweet.photo.photo.blob.key)
-    .date #{time_ago_in_words(tweet.created_at)}前
+    p.date #{time_ago_in_words(tweet.created_at)}前
     .wrap
       .info
         p.mention

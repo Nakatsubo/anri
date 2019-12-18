@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # retweets
   resources :retweets, only: %i(create)
   # tweets
-  resources :tweets, only: %i(create show)
+  resources :tweets, only: %i(show create destroy)
   # photos
   resources :photos, only: %i(create)
   # users
