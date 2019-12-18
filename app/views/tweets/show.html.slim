@@ -8,7 +8,7 @@
     .retweet
       .modal_btn.new_btn
         button id="retweet-modal-open" class="js-modal-open"
-          = image_tag 'new_retweet.svg', class: 'retweet detail'
+          = embedded_svg('new_retweet.svg', class: 'retweet detail')
       = render 'components/posts/retweets/index', tweet: @this_tweet, photo_uri: @photo_uri
   .main
     p.profile.detail
@@ -24,4 +24,7 @@
       .info
         = render 'components/posts/tweets/info'
       .dustbox
-        = embedded_svg('dustbox.svg', class: 'dustbox detail')
+        .modal_btn.new_btn
+          button id="dustbox-modal-open" class="js-modal-open"
+            = embedded_svg('dustbox.svg', class: 'dustbox detail')
+        = render 'components/posts/tweets/delete'
