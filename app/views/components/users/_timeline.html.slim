@@ -16,9 +16,7 @@ h2 タイムライン
           = embedded_svg('alert.svg', class: 'alert index')
         p.retweet_count
           = embedded_svg('retweet.svg', class: 'retweet_count index')
-          = @client.status(tweet.endemic).retweet_count
         p.favorite_count
           = embedded_svg('favorite.svg', class: 'favorite_count index')
-          = @client.status(tweet.endemic).favorite_count
       .dustbox
         = embedded_svg('dustbox.svg', class: 'dustbox index')

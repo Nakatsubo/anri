@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @photo = Photo.new
     @tweet = Tweet.new
     @client = set_client
-    @tweets = Tweet.all
+    @tweets = Tweet.recent
   end
 
 end

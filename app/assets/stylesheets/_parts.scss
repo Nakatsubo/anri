@@ -9,6 +9,14 @@
   fill: $darkorange;
 }
 
-.retweet_image.noactive {
+.favorite_image.active {
+  fill: $red;
+}
+
+.alert_image.active {
+  fill: $yellow;
+}
+
+.retweet_image.noactive, .favorite_image.noactive, .alert_image.noactive {
   fill: $darkgray;
 }

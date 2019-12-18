@@ -1,9 +1,11 @@
 p.mention_image
-  = embedded_svg('alert.svg', class: 'alert detail')
+  - if @this_tweet.retweets.present?
+    = embedded_svg('alert.svg', class: 'alert_image detail active')
+  - else
+    = embedded_svg('alert.svg', class: 'alert_image detail noactive')
 p.retweet_image
   #post_reply.post_reply
     = render 'components/posts/replys/index', this_tweet: @this_tweet
-  = @client.status(@this_tweet.endemic).retweet_count
 p.favorite_image
-  = embedded_svg('favorite.svg', class: 'favorite_count detail')
-  = @client.status(@this_tweet.endemic).favorite_count
+  #post_favorite.post_favorite
+    = render 'components/posts/favorites/index', this_tweet: @this_tweet

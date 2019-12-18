@@ -1,0 +1,6 @@
+- if @this_tweet.favorites.present?
+  = link_to favorite_path(@this_tweet), method: :delete, remote: true
+    = embedded_svg('favorite.svg', class: 'favorite_image detail active')
+- else
+  = link_to favorites_path(@this_tweet), method: :post, remote: true
+    = embedded_svg('favorite.svg', class: 'favorite_image detail noactive')

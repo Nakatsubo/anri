@@ -7,9 +7,10 @@ class TweetsController < ApplicationController
       @tweet = Tweet.new(tweet_params)
       @photo = Photo.recent(current_user)
       @photo_uri = set_uri(@photo.photo.blob.key)
+      @client = set_client
       if @tweet.text.present?
         @set_tweet = set_text(@tweet.text, @tweet.hushtag)
-        @result = AnriTwitter.new(@set_tweet.to_s, @photo_uri.to_s).tweet
+        @result = AnriTwitter.new(@set_tweet.to_s, @photo_uri.to_s, @client).tweet
         set_tweet(@tweet, @result, current_user, @photo)
         if @tweet.save
           render 'components/posts/posts/index', tweet: @tweet, photo_uri: @photo_uri
@@ -39,10 +40,10 @@ class TweetsController < ApplicationController
       if @this_tweet.destroy
         redirect_to user_path(current_user.name)
       else
-        render :create
+        redirect_to tweet_path(@this_tweet)
       end
     else
-      render :create
+      redirect_to tweet_path(@this_tweet)
     end
   end
 

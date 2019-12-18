@@ -3,8 +3,7 @@ class RetweetsController < ApplicationController
 
   def create
     if retweet_params.present?
-      @retweet = Tweet.new(retweet_params)
-      @retweet.user_id = current_user.id
+      @retweet = Retweet.new(retweet_params)
       @client = set_client
       if @retweet.text.present?
         @set_retweet = set_text(@retweet.text, @retweet.hushtag)
@@ -25,6 +24,6 @@ class RetweetsController < ApplicationController
   private
 
   def retweet_params
-    params.require(:retweet).permit(:photo_id, :endemic, :text, :hushtag)
+    params.require(:retweet).permit(:tweet_id, :endemic, :text, :hushtag)
   end
 end
