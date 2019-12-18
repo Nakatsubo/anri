@@ -1,9 +1,9 @@
 .preview
   = image_tag @photo_uri
 .form_tweet
-  = form_with scope: :retweet, url: retweets_path(@retweet) do |f|
+  = form_with model: @retweet, url: retweets_path(@retweet) do |f|
     .tweet
-      = f.hidden_field :photo_id, value: @this_tweet.photo_id
+      = f.hidden_field :tweet_id, value: @this_tweet.id
       = f.hidden_field :endemic, value: @this_tweet.endemic
       = f.text_field :hushtag, value: @reply_labels
       = f.text_area :text, value: "@#{current_user.nickname}"

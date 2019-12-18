@@ -34,13 +34,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     return false;
   }, false);
 
-  const retweet_modal_close = document.getElementById('retweet-modal-close');
-  retweet_modal_close.addEventListener('click', (e) => {
-    let modal = document.getElementById('retweet-modal');
-    $(modal).fadeOut(); // by jQuery
-    return false;
-  }, false);
-
   // function-modal
   const footer_modal_open = document.getElementById('footer-modal-open');
   footer_modal_open.addEventListener('click', (e) => {
@@ -63,8 +56,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
   // dustmox-modal
   const dustbox_modal_open = document.getElementById('dustbox-modal-open');
   dustbox_modal_open.addEventListener('click', (e) => {
-    //home_is_active.classList.add('fillするカラーのクラスを追加');
-    //nav_is_active.classList.add('fillするカラーのクラスを追加');
     let modal = document.getElementById('dustbox-modal');
     $(modal).fadeIn(); // by jQuery
     return false;
@@ -72,8 +63,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
   const dustbox_modal_close = document.getElementById('dustbox-modal-close');
   dustbox_modal_close.addEventListener('click', (e) => {
-    //home_is_active.classList.add('fillするカラーのクラスを追加');
-    //function_is_active.classList.add('fillするカラーのクラスを追加');
     let modal = document.getElementById('dustbox-modal');
     $(modal).fadeOut(); // by jQuery
     return false;

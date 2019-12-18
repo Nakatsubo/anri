@@ -9,4 +9,4 @@ div id="retweet-modal" class="modal"
         = render 'components/posts/retweets/form', tweet: @this_tweet, photo_uri: @photo_uri
       #post_retweet.post_retweet
     .btn.back
-      = render 'components/posts/common/btn'
+      = link_to 'ツイートに戻る', retweets_path(@this_tweet)

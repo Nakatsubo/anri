@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   # コメントアウトは最終的に整理しておくこと
+  # searchs
+  resources :searchs, only: %i(index create)
+  # replys
+  resources :favorites, only: %i(create destroy)
   # replys
   resources :replys, only: %i(create destroy)
   # retweets
