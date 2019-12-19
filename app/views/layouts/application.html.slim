@@ -13,9 +13,9 @@ html lang='ja'
       p.notice = notice
       p.alert = alert
       main#main
-        = render 'components/aside/right_aside'
+        = render 'components/aside/left_aside'
         section.sec
           .inner
             = yield
-        = render 'components/aside/left_aside'
+        = render 'components/aside/right_aside'
       = render 'components/footer/footer'

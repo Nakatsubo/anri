@@ -7,3 +7,5 @@ p.notice 上位20件の検索結果を表示しています
       p.name = tweet.user.name
     .txt.search
       p = tweet.text
+    .date.serach
+      p #{convert_time(tweet.created_at)}
