@@ -7,9 +7,10 @@ class AnriNatto
 
   def mention_time_line
     @listTimeline = ""
-    @client.mentions_timeline.each do |tweet|
+    client.mentions_timeline.each do |tweet|
       @listTimeline << tweet.text
     end
+    @listTimeline
   end
 
   def format_txt(txt)
@@ -25,6 +26,7 @@ class AnriNatto
     natto.parse(txt) do |n|
       @surfaces << n.surface
     end
+    @surfaces
   end
 
   def set_words
@@ -37,6 +39,7 @@ class AnriNatto
     words = @surfaces.group_by(&:itself).map { |k, v| [k, v.size] }.sort_by {|k, v| -v }
     words = words.map { |k, v| k }
     @often_used_five_words = words.first(5)
+    @often_used_five_words
   end
 
   def set_reply_labels

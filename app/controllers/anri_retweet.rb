@@ -10,6 +10,7 @@ class AnriRetweet
   def reply
     @set_client = @client.status(endemic)
     @reply = @client.update("#{@set_retweet}", options = {:in_reply_to_status_id => @set_client.id})
+    @reply
   end
 
 end
