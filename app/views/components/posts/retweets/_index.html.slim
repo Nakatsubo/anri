@@ -2,6 +2,13 @@ div id="retweet-modal" class="modal"
   div id="retweet-modal-close" class="modal_bg js-modal-close"
   .modal_content
     .modal_func
+      .attention
+        p
+          | Twitterアプリケーション上で、このツイートを削除している場合、エラーが発生します。
+          br
+          | このツイートがTwitterアプリケーションにあるか、確認してください。
+      .btn.twitter
+        = link_to 'Twitterのアカウントを作成', 'https://twitter.com/', target: "_blank"
       .profile
         = render 'components/posts/common/profile'
       #retweet.retweet
@@ -9,4 +16,4 @@ div id="retweet-modal" class="modal"
         = render 'components/posts/retweets/form', tweet: @this_tweet, photo_uri: @photo_uri
       #post_retweet.post_retweet
     .btn.back
-      = link_to 'ツイートに戻る', retweets_path(@this_tweet)
+      = link_to 'ツイートに戻る', tweet_path(@this_tweet.id)

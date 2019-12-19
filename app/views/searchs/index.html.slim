@@ -1,0 +1,14 @@
+- set_meta_tags title: "キーワード検索 | ANRI", description: "キーワード検索"
+.content.search
+  .tit
+    p.btn.back
+      = link_to user_path(current_user.name)
+        = embedded_svg('back.svg', class: 'back detail')
+    h2 キーワード検索
+    p.image
+      = image_tag current_user.image
+  .main
+    .search_box
+      = render 'components/searchs/form'
+    #search_result.search_result
+    #error_result.error_result

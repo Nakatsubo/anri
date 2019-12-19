@@ -1,0 +1,9 @@
+p.notice 上位20件の検索結果を表示しています
+- @result.take(20).each do |tweet|
+  a href="#{tweet.url}" target="_blank"
+    .profile.search
+      p.image
+        img src="#{tweet.user.profile_image_url_https}"
+      p.name = tweet.user.name
+    .txt.search
+      p = tweet.text

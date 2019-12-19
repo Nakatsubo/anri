@@ -3,36 +3,34 @@
     ul
       li.sp
         = link_to user_path(current_user.name)
-          = image_tag 'home.svg', id: 'home-is-active'
+          = embedded_svg('home.svg', id: 'home-is-active')
       li.sp
-        /root_pathはダミー。searchs_path（仮）にリンクさせる
-        = link_to root_path
-          = image_tag 'search.svg', id: 'search-is-active'
+        = link_to searchs_path
+          = embedded_svg('search.svg', id: 'search-is-active')
       li.sp
         .modal_btn
           button id="footer-modal-open" class="js-modal-open"
-            = image_tag 'function.svg', id: 'function-is-active'
+            = embedded_svg('function.svg', id: 'function-is-active')
         = render 'components/footer/function'
       li
         .modal_btn.new_btn
           button id="photo-modal-open" class="js-modal-open"
-            = image_tag 'new_tweet.svg', class: 'pc'
-            = image_tag 'new_nav.svg', id: 'nav-is-active', class: 'sp'
+            = embedded_svg('new_tweet.svg', class: 'pc')
+            = embedded_svg('new_nav.svg', id: 'nav-is-active', class: 'sp')
         = render 'components/posts/photos/index'
       li.pc
-        /root_pathはダミー。searchs_path（仮）にリンクさせる
-        = link_to root_path
-          = image_tag 'search.svg'
+        = link_to searchs_path
+          = embedded_svg('search.svg')
       li.pc
         = link_to destroy_user_session_path, method: :delete
-          = image_tag 'logout.svg'
+          = embedded_svg('logout.svg')
       li.pc
         = link_to about_homes_path
-          = image_tag 'logo.svg'
+          = embedded_svg('logo.svg')
       li.pc
         - if current_user.twitter.present?
           = link_to current_user.twitter, target: "_blank"
-            = image_tag 'twitter.svg'
+            = embedded_svg('twitter.svg')
         - else
           = link_to 'https://twitter.com/', target: "_blank"
-            = image_tag 'twitter.svg'
+            = embedded_svg('twitter.svg')

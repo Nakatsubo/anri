@@ -386,6 +386,9 @@ favorite
   - ER図 を修正
   - favorite モデルを作成。favorite のステータスを管理する必要があるため<br>
   TwitterAPIとアプリの互換性を検討し、いいねのcount が取れないため追加実装
+- 19/12/19 version2.8<br>
+  - ER図 を修正
+  - search モデルを作成。query のステータスを管理する必要があるため
 
 ## メモ
 - Herokuでの認証には、TwitterApp の Callback URL を変更する<br>
