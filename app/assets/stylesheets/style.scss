@@ -18,10 +18,13 @@
 }
 }*/
 
-img {
+svg {
   max-width: 50px;
 }
 
+img {
+  max-width: 50px;
+}
 /*
 #container {
   position: relative;
@@ -32,10 +35,10 @@ img {
   .nav {
     display: block;
     ul {
-      li.pc, img.pc {
+      li.pc, svg.pc {
         display: block;
       }
-      li.sp, img.sp {
+      li.sp, svg.sp {
         display: none;
       }
     }
@@ -48,10 +51,10 @@ img {
       ul {
         display: flex;
         align-items: flex-end;
-        li.pc, img.pc {
+        li.pc, svg.pc {
           display: none;
         }
-        li.sp, img.sp {
+        li.sp, svg.sp {
           display: block;
         }
       }
@@ -73,13 +76,4 @@ img {
   @include sp {
     display: block;
   }
-}
-
-/* btn //////////*/
-.alert.index, .retweet_count.index, .favorite_count.index, .dustbox.index {
-  fill: $demigray;
-}
-
-.back.detail, .retweet.detail {
-  fill: $darkorange;
 }

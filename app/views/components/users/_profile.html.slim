@@ -5,4 +5,4 @@ p.image
     = image_tag 'noimage_profile.jpg'
 p.name
   = current_user.name
-  span = image_tag 'profile_logo.svg'
+  span = embedded_svg('profile_logo.svg')

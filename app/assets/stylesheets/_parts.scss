@@ -3,8 +3,16 @@
 ////////////////////*/
 
 /*////////////////////
-  tweet
+  btn
 ////////////////////*/
+.alert.index, .retweet_image.index, .favorite_image.index, .dustbox.index {
+  fill: $demigray;
+}
+
+.back.detail, .retweet.detail {
+  fill: $darkorange;
+}
+
 .retweet_image.active {
   fill: $darkorange;
 }
