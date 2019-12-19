@@ -1,0 +1,7 @@
+.form_search
+  = form_with scope: :search, url: searchs_path(@search) do |f|
+    .search
+      = embedded_svg('search.svg', class: 'search')
+      = f.text_field :query, placeholder: "キーワードを入力してください"
+      = f.submit '検索', class: 'dummy_submit'
+      /button.btn_submit 検索 ==> ボタン作成用
