@@ -39,3 +39,21 @@ $sp: 559px;
     @content;
   }
 }
+
+/* link //////////*/
+@mixin link {
+  display: inline-flex;
+  &:hover {
+    transition: all 0.5s ease;
+  }
+}
+
+/* btn //////////*/
+@mixin btn {
+  display: inline-flex;
+  border-radius: 22px;
+  font-weight: 600;
+  &:hover {
+    transition: all 0.5s ease;
+  }
+}

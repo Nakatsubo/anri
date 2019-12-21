@@ -1,13 +1,22 @@
 - set_meta_tags title: "HOME | ANRI", description: "ANRIは緊急時の人探しをサポートするアプリケーションです。"
-= render 'components/header/header'
 .content.top
   .image.pc
-
+    .device
+      = image_tag 'device.png'
+    .swiper
+      .swiper-container
+        .swiper-wrapper
+          .swiper-slide
+            = image_tag 'slide01.png'
+          .swiper-slide
+            = image_tag 'slide02.png'
+          .swiper-slide
+            = image_tag 'slide03.png'
   .description
     .main
       .logo
         h1
-          = image_tag 'logo.svg'
+          = embedded_svg('logo.svg')
           span ANRI
         p
           | - <strong>A</strong>gencies <strong>N</strong>otice <strong>R</strong>escue <strong>I</strong>nformation

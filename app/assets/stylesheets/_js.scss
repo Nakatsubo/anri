@@ -7,16 +7,8 @@ button {
 
 .modal_btn {
   margin: 0;
-  img {
-    width: auto;
-    height: 2.5rem;
-  }
-}
-
-/* サイズはダミー 最終的に調整すること */
-.modal_btn.new_btn {
-  img {
-    width: 50px;
+  svg {
+    width: 3.2rem;
     height: auto;
   }
 }
@@ -60,11 +52,32 @@ button {
             width: 100%;
             height: auto;
             padding: 3rem;
-            //color: $dark-red;
+            color: $darkgray;
             cursor: pointer;
             &:hover {
               transition: all 0.5s ease;
-              //color: $light-red;
+              color: $darkorange;
+            }
+            img {
+              width: auto;
+              height: 1.6rem;
+              &:hover {
+                transition: all 0.5s ease;
+                opacity: 0.8;
+              }
+            }
+            span {
+              display: none;
+            }
+          }
+          &.twitter {
+            a {
+              font-weight: 600;
+              color: $darkblue;
+              &:hover {
+                transition: all 0.5s ease;
+                color: $lightblue;
+              }
             }
           }
         }

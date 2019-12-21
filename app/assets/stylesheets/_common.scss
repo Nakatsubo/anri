@@ -1,0 +1,142 @@
+/*////////////////////////////////////////
+  common
+////////////////////////////////////////*/
+
+/* layout //////////*/
+#container {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  background: $lightgray;
+  display: flex;
+  flex-flow: column;
+}
+
+#wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: unset;
+  //max-width: 112rem;
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  text-align: center;
+  color: $black;
+}
+
+.sec {
+  padding: 2rem;
+  .inner {
+    .tit {
+      //padding: 2rem;
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 3.2rem;
+      }
+      p {
+        font-size: 2.0rem;
+      }
+    }
+    .content {
+      //padding: 2rem;
+      p {
+        font-size: 1.6rem;
+        &.detail {
+          margin-bottom: 2rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+/* header //////////*/
+.header {
+  .inner {
+    padding: 2rem;
+    align-items: center;
+    .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        h1 {
+          a {
+            display: inline-flex;
+            svg {
+              width: auto;
+              height: 2rem;
+              fill: $darkorange;
+            }
+          }
+          span {
+            display: none;
+          }
+        }
+        p.sp {
+          display: block;
+          margin-left: 1rem;
+          font-size: 1.6rem;
+          color: $darkorange;
+        }
+      }
+    }
+  }
+  @include sp {
+    .inner {
+      .wrap {
+        .logo {
+          h1 {
+            span {
+              display: none;
+            }
+          }
+          p.sp {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header.top {
+  display: none;
+  @include tab {
+    display: block;
+  }
+}
+
+/* footer //////////*/
+footer {
+  .inner {
+    padding: 2rem;
+    text-align: center;
+    color: $darkgray;
+    .nav {
+      ul {
+        display: flex;
+        justify-content: center;
+        margin-bottom: .5rem;
+        li {
+          &:first-of-type {
+            margin-right: 2rem;
+          }
+          a {
+            color: $darkgray;
+            //font-weight: 600;
+            @include link;
+            &:hover {
+              color: $demigray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,119 @@
+/*////////////////////////////////////////
+  homes
+////////////////////////////////////////*/
+
+/*////////////////////////////////////////
+  top
+////////////////////////////////////////*/
+
+/* layout //////////*/
+.content.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  .main {
+    margin-bottom: 4rem;
+    .logo {
+      margin-bottom: 2rem;
+      h1 {
+        margin-bottom: .5rem;
+        svg {
+          width: auto;
+          height: 40px;
+          fill: $darkorange;
+        }
+        span {
+          display: none;
+        }
+      }
+      p {
+        font-size: 2rem;
+        color: $darkorange;
+      }
+    }
+    .lead {
+      margin-bottom: 2rem;
+      color: $darkgray;
+    }
+    .link.about {
+      margin-bottom: 2rem;
+      a {
+        color: $darkorange;
+        font-weight: 600;
+        @include link;
+        &:hover {
+          color: $lightorange;
+        }
+      }
+    }
+    .btn.login {
+      a {
+        padding: 1rem 9rem;
+        background: $darkorange;
+        color: $white;
+        @include btn;
+        &:hover {
+          background: $lightorange;
+        }
+      }
+    }
+  }
+  .sub {
+    .lead {
+      margin-bottom: 2rem;
+      font-weight: 600;
+      color: $darkgray;
+    }
+    .btn.twitter {
+      margin-bottom: 2rem;
+      a {
+        padding: 1rem 3rem;
+        border: 1px solid $darkblue;
+        color: $darkblue;
+        @include btn;
+        &:hover {
+          border: 1px solid $lightblue;
+          color: $lightblue;
+        }
+      }
+    }
+    .attention {
+      color: $darkgray;
+    }
+  }
+}
+
+/* carusel //////////*/
+.image.pc {
+  display: block;
+  position: relative;
+  .device {
+    img {
+      max-width: 48rem;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .swiper {
+    position: absolute;
+    top: 88px;
+    right: 63px;
+    .swiper-container {
+      max-width: 266px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  @include tab {
+    display: none;
+  }
+}
