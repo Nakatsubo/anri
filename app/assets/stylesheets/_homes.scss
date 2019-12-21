@@ -10,6 +10,10 @@
 .content.top {
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  @include tab {
+    display: block;
+  }
 }
 
 .description {
@@ -19,6 +23,7 @@
   align-items: center;
 }
 
+/* detail //////////*/
 .description {
   .main {
     margin-bottom: 4rem;
@@ -57,13 +62,7 @@
     }
     .btn.login {
       a {
-        padding: 1rem 9rem;
-        background: $darkorange;
-        color: $white;
-        @include btn;
-        &:hover {
-          background: $lightorange;
-        }
+        @include btn_login
       }
     }
   }
@@ -76,14 +75,7 @@
     .btn.twitter {
       margin-bottom: 2rem;
       a {
-        padding: 1rem 3rem;
-        border: 1px solid $darkblue;
-        color: $darkblue;
-        @include btn;
-        &:hover {
-          border: 1px solid $lightblue;
-          color: $lightblue;
-        }
+        @include btn_twitter
       }
     }
     .attention {
@@ -93,7 +85,7 @@
 }
 
 /* carusel //////////*/
-.image.pc {
+.carusel.pc {
   display: block;
   position: relative;
   .device {
@@ -113,7 +105,164 @@
       height: auto;
     }
   }
-  @include tab {
+  @include sp {
     display: none;
+  }
+}
+
+/*////////////////////////////////////////
+  about, terms, privacy
+////////////////////////////////////////*/
+
+/* common //////////*/
+.content.homes {
+  max-width: 112rem;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  .main {
+    margin-bottom: 4rem;
+    .tit {
+      margin-bottom: 4rem;
+      h2 {
+        font-weight: 600;
+        font-size: 2.4rem;
+        color: $darkorange;
+        svg {
+          width: auto;
+          height: 40px;
+          fill: $darkorange;
+        }
+        span {
+          display: none;
+        }
+      }
+      p {
+        font-size: 2rem;
+        color: $darkorange;
+      }
+    }
+    .sub_tit {
+      margin-bottom: 4rem;
+      p {
+        font-weight: 600;
+        font-size: 2rem;
+        color: $darkorange;
+      }
+    }
+    .txt {
+      color: $darkgray;
+      a.twitter {
+        color: $darkblue;
+        @include link;
+        &:hover {
+          color: $lightblue;
+        }
+      }
+      a.google {
+        color: $darkgray;
+        @include link;
+        &:hover {
+          color: $demigray;
+        }
+      }
+    }
+  }
+  .sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn.login {
+      margin-right: 2rem;
+      a {
+        @include btn_login
+      }
+    }
+    .btn.twitter {
+      a {
+        @include btn_twitter
+      }
+    }
+  }
+  @include sp {
+    .sub {
+      display: block;
+      .btn.login {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+/* about //////////*/
+.content.about {
+  .main {
+    .tit {
+      h2 {
+        margin-bottom: .5rem;
+      }
+    }
+    .sub_tit {
+      &:after {
+        content: '';
+        display: inline-flex;
+        width: 4rem;
+        height: auto;
+        padding-top: 2rem;
+        border-bottom: 1px solid $darkorange;
+      }
+    }
+  }
+}
+
+/* terms, privacy //////////*/
+.content.terms, .content.privacy {
+  .main {
+    .tit {
+      margin-bottom: 2rem;
+      &:after {
+        content: '';
+        display: inline-flex;
+        width: 4rem;
+        height: auto;
+        padding-top: 2rem;
+        border-bottom: 1px solid $darkorange;
+      }
+      h2 {
+        margin-bottom: 0;
+      }
+      .sub_tit {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .txt {
+      text-align: left;
+      .lead {
+        margin-bottom: 2rem;
+      }
+      .article {
+        margin-bottom: 2rem;
+        h3 {
+          margin-bottom: .5rem;
+          font-size: 1.6rem;
+        }
+        ul {
+          margin-top: 2rem;
+        }
+      }
+      .end {
+        text-align: right;
+      }
+    }
+  }
+  .sub {
+    .btn.top {
+      a {
+        @include btn_top;
+      }
+    }
   }
 }

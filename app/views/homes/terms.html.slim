@@ -1,9 +1,9 @@
 - set_meta_tags title: " 利用規約 | ANRI", description: "この利用規約（以下、「本規約」といいます。）は、ANRI （以下、「当チーム」といいます。）がこのウェブサイト上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。"
-= render 'components/header/header'
-.content.terms
+.content.homes.terms
   .main
     .tit
       h2 利用規約
+    .sub_tit
       p Terms
     .txt
       p.lead
@@ -118,4 +118,4 @@
       p.end 以上
   .sub
     .btn.top
-      = render 'components/homes/btn'
+      = link_to 'トップページへ戻る', root_path

@@ -1,11 +1,10 @@
 - set_meta_tags title: "ABOUT | ANRI", description: "ANRIは緊急時の人探しをサポートするアプリケーションです。"
-= render 'components/header/header'
-.content.about
+.content.homes.about
   .main
     .tit
       h2
-        = image_tag 'logo.svg'
-          span ANRI
+        = embedded_svg('logo.svg')
+        span ANRI
       p
         | - <strong>A</strong>gencies <strong>N</strong>otice <strong>R</strong>escue <strong>I</strong>nformation
     .sub_tit
@@ -15,10 +14,10 @@
         | ANRIは緊急時の人探しをサポートするアプリケーションです。
         br
         br
-        | 情報拡散を目的とし、<a href="https://twitter.com/" target="_blank">Twitter</a>と連携します。
+        | 情報拡散を目的とし、<a href="https://twitter.com/" target="_blank" class="twitter"><strong>Twitter</strong></a>と連携します。
         br
         br
-        | ANRIはあなたが投稿した画像のデータを、<a href="https://cloud.google.com/vision/" target="_blank"><strong>Cloud Vision API</strong></a>を使って、客観的に解析します。<br>解析した画像データからハッシュタグを自動発行、<a href="https://cloud.google.com/translate/" target="_blank"><strong>Cloud Translation API</strong></a>を使って、日本語翻訳します。
+        | ANRIはあなたが投稿した画像のデータを、<a href="https://cloud.google.com/vision/" target="_blank" class="google"><strong>Cloud Vision API</strong></a>を使って、客観的に解析します。<br>解析した画像データからハッシュタグを自動発行、<a href="https://cloud.google.com/translate/" target="_blank" class="google"><strong>Cloud Translation API</strong></a>を使って、日本語翻訳します。
         br
         br
         | 投稿した画像と発行したハッシュタグは、<br>ANRIからあなたのTwitterのタイムラインへ、自動投稿することができます。

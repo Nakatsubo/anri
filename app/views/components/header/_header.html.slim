@@ -1,8 +1,7 @@
-header.header.top
+header.header
   .inner
-    .wrap
-      = render 'components/header/logo'
-      .modal_btn.new_btn
-        button id="header-modal-open" class="js-modal-open"
-          = embedded_svg('function.svg')
-      = render 'components/header/nav'
+    = render 'components/header/logo'
+    .modal_btn.new_btn
+      button id="header-modal-open" class="js-modal-open"
+        = embedded_svg('function.svg')
+    = render 'components/header/nav'
