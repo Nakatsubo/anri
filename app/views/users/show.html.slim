@@ -1,13 +1,17 @@
 - set_meta_tags title: @client.user.name + " | ANRI", description: "タイムライン"
-.content.timeline
-  .tit
-    h1
-      span #{@client.user.name}
-  .main
-    .banner
-      = render 'components/users/banner'
-    .user
-      .profile
-        = render 'components/users/main_profile'
-      .timeline
-        = render 'components/users/timeline'
+= render 'components/aside/left_aside'
+section.sec.timeline
+  .inner
+    .content.timeline
+      .tit
+        h2
+          span #{@client.user.name}
+      .main
+        .banner
+          = render 'components/users/banner'
+        .user
+          .profile
+            = render 'components/users/main_profile'
+          .timeline
+            = render 'components/users/timeline'
+= render 'components/aside/right_aside'

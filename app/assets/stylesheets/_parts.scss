@@ -10,6 +10,13 @@
   btn
 ////////////////////////////////////////*/
 
+.function_btn {
+  svg {
+    width: 3.2rem;
+    height: auto;
+  }
+}
+
 .alert.index, .retweet_image.index, .favorite_image.index, .dustbox.index {
   fill: $demigray;
 }

@@ -1,41 +1,43 @@
 - set_meta_tags title: "HOME | ANRI", description: "ANRIは緊急時の人探しをサポートするアプリケーションです。"
-.content.top
-  .carusel.pc
-    .device
-      = image_tag 'device.png'
-    .swiper
-      .swiper-container
-        .swiper-wrapper
-          .swiper-slide
-            = image_tag 'slide01.png'
-          .swiper-slide
-            = image_tag 'slide02.png'
-          .swiper-slide
-            = image_tag 'slide03.png'
-  .description
-    .main
-      .logo
-        h1
-          = embedded_svg('logo.svg')
-          span ANRI
-        p
-          | - <strong>A</strong>gencies <strong>N</strong>otice <strong>R</strong>escue <strong>I</strong>nformation
-      .lead
-        p
-          | ANRIは緊急時の人探しをサポートする
-          br
-          | アプリケーションです。
-      .link.about
-        = link_to 'About ANRI', about_homes_path
-      .btn.login
-        = link_to 'ログイン', user_twitter_omniauth_authorize_path
-    .sub
-      .lead
-        p
-          | ANRIをご利用いただくためには
-          br
-          | Twitterのアカウント登録が必要です。
-      .btn.twitter
-        = link_to 'Twitterのアカウントを作成', 'https://twitter.com/', target: "_blank"
-      .attention
-        p Twitterの公式ページに遷移します
+section.sec.top
+  .inner
+    .content.top
+      .carusel.pc
+        .device
+          = image_tag 'device.png'
+        .swiper
+          .swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                = image_tag 'slide01.png'
+              .swiper-slide
+                = image_tag 'slide02.png'
+              .swiper-slide
+                = image_tag 'slide03.png'
+      .description
+        .main
+          .logo
+            h1
+              = embedded_svg('logo.svg')
+              span ANRI
+            p
+              | - <strong>A</strong>gencies <strong>N</strong>otice <strong>R</strong>escue <strong>I</strong>nformation
+          .lead
+            p
+              | ANRIは緊急時の人探しをサポートする
+              br
+              | アプリケーションです。
+          .link.about
+            = link_to 'About ANRI', about_homes_path
+          .btn.login
+            = link_to 'ログイン', user_twitter_omniauth_authorize_path
+        .sub
+          .lead
+            p
+              | ANRIをご利用いただくためには
+              br
+              | Twitterのアカウント登録が必要です。
+          .btn.twitter
+            = link_to 'Twitterのアカウントを作成', 'https://twitter.com/', target: "_blank"
+          .attention
+            p Twitterの公式ページに遷移します

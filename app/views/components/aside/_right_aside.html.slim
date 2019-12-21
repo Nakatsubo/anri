@@ -6,6 +6,7 @@
           h2 ANRI INFO
         - @recent_info = Tweet.recent_info
         - @recent_info.each do |info|
-          p.image = image_tag set_photo_uri(info.photo.photo.blob.key)
-          p.hushtag = info.hushtag
-          p.date #{convert_time(info.created_at)}
+          .info
+            p.image = image_tag set_photo_uri(info.photo.photo.blob.key)
+            p.hushtag = info.hushtag
+            p.date #{convert_time(info.created_at)}

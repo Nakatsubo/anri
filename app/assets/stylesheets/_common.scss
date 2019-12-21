@@ -10,35 +10,40 @@
   background: $lightgray;
   display: flex;
   flex-flow: column;
+  position: relative;
 }
 
 #wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: unset;
-  //max-width: 112rem;
-  width: 100%;
-  height: auto;
-  padding: 2rem;
-  color: $black;
-  .sec {
-    padding: 2rem;
+  padding: 7.5rem 2rem;
+  > .inner {
+    max-width: 112rem;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: unset;
+    color: $black;
   }
   @include sp {
-    .sec {
-      padding: 0;
-    }
+    padding: 2rem;
   }
 }
 
 /* header //////////*/
 .header {
   .inner {
-    padding: 2rem;
+    width: 100%;
+    height: auto;
+    padding: 2rem 4rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    position: fixed;
+    background: $lightgray;
+    z-index: 100;
     .logo {
       display: flex;
       justify-content: flex-start;
@@ -66,6 +71,8 @@
   }
   @include sp {
     .inner {
+      padding: 2rem;
+      position: static;
       .logo {
         h1 {
           span {
@@ -82,8 +89,11 @@
 
 /* footer //////////*/
 footer {
+  padding: 2rem;
   .inner {
-    padding: 2rem;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
     text-align: center;
     color: $darkgray;
     .nav {
@@ -105,5 +115,62 @@ footer {
         }
       }
     }
+  }
+}
+
+/* aside //////////*/
+.left_aside {
+  padding-right: 2rem;
+  .inner {
+    //max-width: 8rem;
+    //width: 100%;
+    width: 8rem;
+    height: auto;
+    .nav {
+      display: block;
+      text-align: center;
+      position: fixed;
+      ul {
+        li.pc, svg.pc {
+          display: block;
+        }
+        li.sp, svg.sp {
+          display: none;
+        }
+      }
+    }
+  }
+  @include sp {
+    position: fixed;
+    bottom: 0;
+    .inner {
+      .nav {
+        display: flex;
+        position: static;
+        ul {
+          display: flex;
+          align-items: flex-end;
+          li.pc, svg.pc {
+            display: none;
+          }
+          li.sp, svg.sp {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.right_aside {
+  padding-left: 2rem;
+  display: block;
+  .inner {
+    max-width: 32rem;
+    width: 100%;
+    height: auto;
+  }
+  @include tab {
+    display: none;
   }
 }

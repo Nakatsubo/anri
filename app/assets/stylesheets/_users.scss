@@ -1,0 +1,55 @@
+/*////////////////////////////////////////
+  users
+////////////////////////////////////////*/
+
+/* layout //////////*/
+.sec.timeline {
+  .inner {
+    padding: 0 2rem;
+  }
+}
+
+.content.timeline {
+  max-width: 64rem;
+  width: 100%;
+  height: auto;
+  border: 1px solid $demigray;
+  .tit {
+    h2 {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.content.recent_info {
+  .tit {
+    margin-bottom: 2rem;
+    h2 {
+      font-weight: 600;
+      font-size: 2.4rem;
+      color: $darkorange;
+    }
+  }
+  .info {
+    margin-bottom: 4rem;
+    p.image {
+      margin-bottom: 2rem;
+      img {
+        width: 100%;
+        height: 18rem;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+    p.hushtag {
+      margin-bottom: 2rem;
+      color: $darkorange;
+    }
+    p.date {
+      text-align: right;
+      color: $darkgray;
+    }
+  }
+}

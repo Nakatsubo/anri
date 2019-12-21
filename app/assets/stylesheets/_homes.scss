@@ -7,6 +7,15 @@
 ////////////////////////////////////////*/
 
 /* layout //////////*/
+.sec.top {
+  .inner {
+    padding: 2rem;
+    @include sp {
+      padding: 0;
+    }
+  }
+}
+
 .content.top {
   display: flex;
   justify-content: space-between;
@@ -115,10 +124,18 @@
 ////////////////////////////////////////*/
 
 /* common //////////*/
+.sec.homes {
+  .inner {
+    padding: 2rem;
+  }
+  @include sp {
+    .inner {
+      padding: 0;
+    }
+  }
+}
+
 .content.homes {
-  max-width: 112rem;
-  width: 100%;
-  height: auto;
   text-align: center;
   .main {
     margin-bottom: 4rem;
@@ -151,6 +168,7 @@
       }
     }
     .txt {
+      line-height: 1.75;
       color: $darkgray;
       a.twitter {
         color: $darkblue;
@@ -185,6 +203,7 @@
     }
   }
   @include sp {
+    padding: 0;
     .sub {
       display: block;
       .btn.login {

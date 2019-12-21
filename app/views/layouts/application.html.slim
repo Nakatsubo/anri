@@ -16,9 +16,6 @@ html lang='ja'
       p.alert = alert
       = render 'components/header/header'
       #wrapper
-        = render 'components/aside/left_aside'
-        section.sec
-          .inner
-            = yield
-        = render 'components/aside/right_aside'
+        .inner
+          = yield
       = render 'components/footer/footer'
