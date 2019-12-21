@@ -1,35 +1,10 @@
 @charset 'utf-8';
 @import '_reset.scss';
 @import '_mixin.scss';
+@import '_common.scss';
 @import '_parts.scss';
+@import '_homes.scss';
 @import '_js.scss';
-
-/* ロゴの表示テスト */
-/*.header {
-.logo {
-  display: none;
-  h1 {
-    a {
-      img {
-        height: 40px;
-      }
-    }
-  }
-}
-}*/
-
-svg {
-  max-width: 50px;
-}
-
-img {
-  max-width: 50px;
-}
-/*
-#container {
-  position: relative;
-}
-*/
 
 .left_aside {
   .nav {

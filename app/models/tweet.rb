@@ -8,4 +8,5 @@ class Tweet < ApplicationRecord
   validates :text, presence: true, length: { maximum: 116 }
 
   scope :recent, -> { order(id: :desc) }
+  scope :recent_info, -> { order(id: :desc).limit(3) }
 end

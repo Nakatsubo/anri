@@ -5,17 +5,20 @@ html lang='ja'
     = csp_meta_tag
     = display_meta_tags(default_meta_tags)
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"
     = favicon_link_tag('favicon.ico')
   body
     #container
       / flash は開発用なので本番環境では削除
       p.notice = notice
       p.alert = alert
-      main#main
-        = render 'components/aside/right_aside'
+      = render 'components/header/header'
+      #wrapper
+        = render 'components/aside/left_aside'
         section.sec
           .inner
             = yield
-        = render 'components/aside/left_aside'
+        = render 'components/aside/right_aside'
       = render 'components/footer/footer'

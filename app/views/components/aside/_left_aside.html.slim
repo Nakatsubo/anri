@@ -1,3 +1,4 @@
-aside.left_aside
-  .inner
-    = render 'components/aside/nav'
+- if user_signed_in?
+  aside.left_aside
+    .inner
+      = render 'components/aside/nav'

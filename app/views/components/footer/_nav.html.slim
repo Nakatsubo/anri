@@ -1,12 +1,8 @@
-nav.nav.pc
-  ul
-    li = link_to '利用規約', terms_homes_path
-    li = link_to 'プライバシーポリシー', privacy_homes_path
-  .copyright
-    p
-      small ©︎ANRI 2019
-nav.nav.sp
+nav.nav
   - unless user_signed_in?
-    .copyright
+    ul
+      li = link_to '利用規約', terms_homes_path
+      li = link_to 'プライバシーポリシー', privacy_homes_path
+  .copyright
     p
       small ©︎ANRI 2019
