@@ -1,8 +1,8 @@
 - set_meta_tags title: @client.user.name + " | ANRI", description: "タイムライン"
 = render 'components/aside/left_aside'
-section.sec.timeline
+section.sec.home
   .inner
-    .content.timeline
+    .content.home
       .tit
         h2
           span #{@client.user.name}
@@ -12,6 +12,7 @@ section.sec.timeline
         .user
           .profile
             = render 'components/users/main_profile'
+          h3 タイムライン
           .timeline
             = render 'components/users/timeline'
 = render 'components/aside/right_aside'

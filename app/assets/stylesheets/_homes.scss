@@ -128,11 +128,6 @@
   .inner {
     padding: 2rem;
   }
-  @include sp {
-    .inner {
-      padding: 0;
-    }
-  }
 }
 
 .content.homes {

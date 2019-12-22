@@ -10,6 +10,25 @@
   btn
 ////////////////////////////////////////*/
 
+/* aside //////////*/
+.new_btn {
+  svg {
+    width: 4.8rem;
+    height: auto;
+  }
+}
+
+svg.search, svg.logout, svg.twitter {
+  width: 3.6rem;
+  height: auto;
+}
+
+svg.about {
+  width: 8rem;
+  height: auto;
+  fill: $darkorange;
+}
+
 .function_btn {
   svg {
     width: 3.2rem;
@@ -17,7 +36,8 @@
   }
 }
 
-.alert.index, .retweet_image.index, .favorite_image.index, .dustbox.index {
+/* timeline //////////*/
+.alert_image.index, .retweet_image.index, .favorite_image.index, .dustbox.index {
   fill: $demigray;
 }
 

@@ -16,7 +16,7 @@
 #wrapper {
   padding: 7.5rem 2rem;
   > .inner {
-    max-width: 112rem;
+    max-width: 104rem;
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -27,7 +27,7 @@
     color: $black;
   }
   @include sp {
-    padding: 2rem;
+    padding: 0;
   }
 }
 
@@ -36,7 +36,7 @@
   .inner {
     width: 100%;
     height: auto;
-    padding: 2rem 4rem;
+    padding: 2rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -71,7 +71,6 @@
   }
   @include sp {
     .inner {
-      padding: 2rem;
       position: static;
       .logo {
         h1 {
@@ -131,10 +130,20 @@ footer {
       text-align: center;
       position: fixed;
       ul {
-        li.pc, svg.pc {
+        li.common {
+          margin-bottom: 2rem;
+        }
+        li.pc {
+          display: block;
+          margin-bottom: 2rem;
+        }
+        svg.pc {
           display: block;
         }
-        li.sp, svg.sp {
+        li.sp {
+          display: none;
+        }
+        svg.sp {
           display: none;
         }
       }
@@ -166,7 +175,7 @@ footer {
   padding-left: 2rem;
   display: block;
   .inner {
-    max-width: 32rem;
+    max-width: 24rem;
     width: 100%;
     height: auto;
   }

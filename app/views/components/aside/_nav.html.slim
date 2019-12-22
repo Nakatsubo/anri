@@ -8,11 +8,11 @@
         = link_to searchs_path
           = embedded_svg('search.svg', id: 'search-is-active')
       li.sp
-        .modal_btn
+        .modal_btn.function_btn
           button id="footer-modal-open" class="js-modal-open"
             = embedded_svg('function.svg', id: 'function-is-active')
         = render 'components/footer/function'
-      li
+      li.common
         .modal_btn.new_btn
           button id="photo-modal-open" class="js-modal-open"
             = embedded_svg('new_tweet.svg', class: 'pc')
@@ -20,17 +20,17 @@
         = render 'components/posts/photos/index'
       li.pc
         = link_to searchs_path
-          = embedded_svg('search.svg')
+          = embedded_svg('search.svg', class: 'search')
       li.pc
         = link_to destroy_user_session_path, method: :delete
-          = embedded_svg('logout.svg')
+          = embedded_svg('logout.svg', class: 'logout')
       li.pc
         = link_to about_homes_path
-          = embedded_svg('logo.svg')
+          = embedded_svg('logo.svg', class: 'about')
       li.pc
         - if current_user.twitter.present?
           = link_to current_user.twitter, target: "_blank"
-            = embedded_svg('twitter.svg')
+            = embedded_svg('twitter.svg', class: 'twitter')
         - else
           = link_to 'https://twitter.com/', target: "_blank"
-            = embedded_svg('twitter.svg')
+            = embedded_svg('twitter.svg', class: 'twitter')

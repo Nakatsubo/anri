@@ -1,16 +1,15 @@
-h2 タイムライン
 - @tweets.each do |tweet|
   = link_to tweet_path(tweet.id)
-    p.profile.tweet
-      = render 'components/users/profile'
-    p.text.tweet
-      = tweet.text
-    p.hushtag.tweet
-      = tweet.hushtag
-    p.photo.tweet
-      = image_tag set_photo_uri(tweet.photo.photo.blob.key)
-    p.date #{time_ago_in_words(tweet.created_at)}前
-    .wrap
+    = render 'components/users/profile'
+    .tweet_detail
+      p.text.tweet
+        = tweet.text
+      p.hushtag.tweet
+        = tweet.hushtag
+      p.photo.tweet
+        = image_tag set_photo_uri(tweet.photo.photo.blob.key)
+      p.date #{convert_time(tweet.created_at)}
+    .info_detail
       .info
         p.mention
           = embedded_svg('alert.svg', class: 'alert_image index')
