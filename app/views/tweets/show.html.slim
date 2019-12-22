@@ -1,30 +1,34 @@
 - set_meta_tags title: @this_tweet.user.name + " | ANRI", description: @this_tweet.user.description
-.content.detail
-  .tit
-    p.btn.back
-      = link_to user_path(current_user.name)
-        = embedded_svg('back.svg', class: 'back detail')
-    h2 ツイート
-    .retweet
-      .modal_btn.new_btn
-        button id="retweet-modal-open" class="js-modal-open"
-          = embedded_svg('new_retweet.svg', class: 'retweet detail')
-      = render 'components/posts/retweets/index', tweet: @this_tweet, photo_uri: @photo_uri
-  .main
-    p.profile.detail
-      = render 'components/users/profile'
-    p.text.detail
-      = @this_tweet.text
-    p.hushtag.detail
-      = @this_tweet.hushtag
-    p.photo.detail
-      = image_tag set_photo_uri(@this_tweet.photo.photo.blob.key)
-    p.date.detail #{convert_time(@this_tweet.created_at)}・#{link_to "Twitter", @this_tweet.user.twitter, target: "_blank"}
-    .wrap
-      .info
-        = render 'components/posts/tweets/info'
-      .dustbox
-        .modal_btn.new_btn
-          button id="dustbox-modal-open" class="js-modal-open"
-            = embedded_svg('dustbox.svg', class: 'dustbox detail')
-        = render 'components/posts/tweets/delete'
+= render 'components/aside/left_aside'
+section.sec.detail
+  .inner
+    .content.detail
+      .tit
+        p.btn.back
+          = link_to user_path(current_user.name)
+            = embedded_svg('back.svg', class: 'back detail')
+        h2 ツイート
+        .retweet
+          .modal_btn.new_btn
+            button id="retweet-modal-open" class="js-modal-open"
+              = embedded_svg('new_retweet.svg', class: 'retweet detail')
+          = render 'components/posts/retweets/index', tweet: @this_tweet, photo_uri: @photo_uri
+      .main
+        p.profile.detail
+          = render 'components/users/profile'
+        p.text.detail
+          = @this_tweet.text
+        p.hushtag.detail
+          = @this_tweet.hushtag
+        p.photo.detail
+          = image_tag set_photo_uri(@this_tweet.photo.photo.blob.key)
+        p.date.detail #{convert_time(@this_tweet.created_at)}・#{link_to "Twitter", @this_tweet.user.twitter, target: "_blank"}
+        .wrap
+          .info
+            = render 'components/posts/tweets/info'
+          .dustbox
+            .modal_btn.new_btn
+              button id="dustbox-modal-open" class="js-modal-open"
+                = embedded_svg('dustbox.svg', class: 'dustbox detail')
+            = render 'components/posts/tweets/delete'
+= render 'components/aside/right_aside'

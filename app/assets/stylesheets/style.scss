@@ -4,51 +4,5 @@
 @import '_common.scss';
 @import '_parts.scss';
 @import '_homes.scss';
+@import '_users.scss';
 @import '_js.scss';
-
-.left_aside {
-  .nav {
-    display: block;
-    ul {
-      li.pc, svg.pc {
-        display: block;
-      }
-      li.sp, svg.sp {
-        display: none;
-      }
-    }
-  }
-  @include sp {
-    position: fixed;
-    bottom: 0;
-    .nav {
-      display: flex;
-      ul {
-        display: flex;
-        align-items: flex-end;
-        li.pc, svg.pc {
-          display: none;
-        }
-        li.sp, svg.sp {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-.footer {
-  .nav.pc {
-    display: block;
-    @include sp {
-      display: none;
-    }
-  }
-}
-
-.nav.sp {
-  display: none;
-  @include sp {
-    display: block;
-  }
-}

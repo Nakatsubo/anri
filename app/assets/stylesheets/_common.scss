@@ -10,111 +10,89 @@
   background: $lightgray;
   display: flex;
   flex-flow: column;
+  position: relative;
 }
 
 #wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: unset;
-  //max-width: 112rem;
-  width: 100%;
-  height: auto;
-  padding: 2rem;
-  text-align: center;
-  color: $black;
-}
-
-.sec {
-  padding: 2rem;
-  .inner {
-    .tit {
-      //padding: 2rem;
-      h2 {
-        margin-bottom: 1rem;
-        font-size: 3.2rem;
-      }
-      p {
-        font-size: 2.0rem;
-      }
-    }
-    .content {
-      //padding: 2rem;
-      p {
-        font-size: 1.6rem;
-        &.detail {
-          margin-bottom: 2rem;
-          text-align: left;
-        }
-      }
-    }
+  padding: 7.5rem 2rem;
+  > .inner {
+    max-width: 104rem;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: unset;
+    color: $black;
+  }
+  @include sp {
+    padding: 0;
   }
 }
 
 /* header //////////*/
 .header {
   .inner {
+    width: 100%;
+    height: auto;
     padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    .wrap {
+    position: fixed;
+    background: $lightgray;
+    z-index: 100;
+    .logo {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .logo {
-        display: flex;
-        justify-content: flex-start;
-        align-items: baseline;
-        h1 {
-          a {
-            display: inline-flex;
-            svg {
-              width: auto;
-              height: 2rem;
-              fill: $darkorange;
-            }
-          }
-          span {
-            display: none;
+      justify-content: flex-start;
+      align-items: baseline;
+      h1 {
+        a {
+          display: inline-flex;
+          svg {
+            width: auto;
+            height: 2rem;
+            fill: $darkorange;
           }
         }
-        p.sp {
-          display: block;
-          margin-left: 1rem;
-          font-size: 1.6rem;
-          color: $darkorange;
+        span {
+          display: none;
         }
+      }
+      p.sp {
+        display: block;
+        margin-left: 1rem;
+        font-size: 1.6rem;
+        color: $darkorange;
       }
     }
   }
   @include sp {
     .inner {
-      .wrap {
-        .logo {
-          h1 {
-            span {
-              display: none;
-            }
-          }
-          p.sp {
+      position: static;
+      .logo {
+        h1 {
+          span {
             display: none;
           }
+        }
+        p.sp {
+          display: none;
         }
       }
     }
   }
 }
 
-.header.top {
-  display: none;
-  @include tab {
-    display: block;
-  }
-}
-
 /* footer //////////*/
 footer {
+  padding: 2rem;
   .inner {
-    padding: 2rem;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
     text-align: center;
     color: $darkgray;
     .nav {
@@ -128,7 +106,6 @@ footer {
           }
           a {
             color: $darkgray;
-            //font-weight: 600;
             @include link;
             &:hover {
               color: $demigray;
@@ -140,3 +117,69 @@ footer {
   }
 }
 
+/* aside //////////*/
+.left_aside {
+  padding-right: 2rem;
+  .inner {
+    //max-width: 8rem;
+    //width: 100%;
+    width: 8rem;
+    height: auto;
+    .nav {
+      display: block;
+      text-align: center;
+      position: fixed;
+      ul {
+        li.common {
+          margin-bottom: 2rem;
+        }
+        li.pc {
+          display: block;
+          margin-bottom: 2rem;
+        }
+        svg.pc {
+          display: block;
+        }
+        li.sp {
+          display: none;
+        }
+        svg.sp {
+          display: none;
+        }
+      }
+    }
+  }
+  @include sp {
+    position: fixed;
+    bottom: 0;
+    .inner {
+      .nav {
+        display: flex;
+        position: static;
+        ul {
+          display: flex;
+          align-items: flex-end;
+          li.pc, svg.pc {
+            display: none;
+          }
+          li.sp, svg.sp {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.right_aside {
+  padding-left: 2rem;
+  display: block;
+  .inner {
+    max-width: 24rem;
+    width: 100%;
+    height: auto;
+  }
+  @include tab {
+    display: none;
+  }
+}

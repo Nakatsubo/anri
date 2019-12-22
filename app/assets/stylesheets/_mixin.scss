@@ -4,6 +4,7 @@
 
 /* color pallet //////////*/
 $white: #FFFFFF;
+$demiwhite: #F4F8FB;
 $darkgray: #657786;
 $demigray: #CCD6DD;
 $lightgray: #FAFAFA;
@@ -55,5 +56,39 @@ $sp: 559px;
   font-weight: 600;
   &:hover {
     transition: all 0.5s ease;
+  }
+}
+
+/* btn_login //////////*/
+@mixin btn_login {
+  padding: 1rem 11rem;
+  background: $darkorange;
+  color: $white;
+  @include btn;
+  &:hover {
+    background: $lightorange;
+  }
+}
+
+/* btn_twitter //////////*/
+@mixin btn_twitter {
+  padding: 1rem 5rem;
+  border: 1px solid $darkblue;
+  color: $darkblue;
+  @include btn;
+  &:hover {
+    border: 1px solid $lightblue;
+    color: $lightblue;
+  }
+}
+
+/* btn_top //////////*/
+@mixin btn_top {
+  padding: 1rem 7rem;
+  background: $darkorange;
+  color: $white;
+  @include btn;
+  &:hover {
+    background: $lightorange;
   }
 }
