@@ -1,10 +1,10 @@
 - if user_signed_in?
   nav.nav
-    ul
-      li.sp
+    ul.left_aside
+      li.sp.home
         = link_to user_path(current_user.name)
           = embedded_svg('home.svg', id: 'home-is-active')
-      li.sp
+      li.sp.search
         = link_to searchs_path
           = embedded_svg('search.svg', id: 'search-is-active')
       li.sp
