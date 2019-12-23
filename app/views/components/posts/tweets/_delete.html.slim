@@ -8,8 +8,11 @@ div id="dustbox-modal" class="modal"
           | この操作は取り消せません。
           br
           | ANRIとTwitterのタイムライン、Twitterの検索結果からツイートが削除されます。
-      .btn_wrap
-        .btn.cancel
-          = link_to 'キャンセル', tweet_path(@this_tweet)
-        .btn.decision
-          = link_to '削除', tweet_path(@this_tweet), method: :delete, local: true
+      - unless current_user.tweets.count == 1
+        .btn_wrap
+          .btn.cancel
+            = link_to 'キャンセル', tweet_path(@this_tweet)
+          .btn.decision
+            = link_to '削除', tweet_path(@this_tweet), method: :delete, local: true
+      - else
+        p.delete_attention このツイートは削除できません。

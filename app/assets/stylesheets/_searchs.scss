@@ -1,0 +1,116 @@
+/*////////////////////////////////////////
+  searchs
+////////////////////////////////////////*/
+
+/* layout //////////*/
+.sec.search {
+  max-width: 64rem;
+  width: 100%;
+  height: auto;
+  .inner {
+    padding: 0 2rem;
+  }
+  @include sp {
+    .inner {
+      padding: 0;
+    }
+  }
+}
+
+.content.search {
+  border: 1px solid $demigray;
+  background: $white;
+  .tit {
+    padding: 2rem;
+    border-bottom: 1px solid $demigray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      font-size: 1.6rem;
+    }
+    svg {
+      width: auto;
+      height: 2.4rem;
+    }
+  }
+  .main {
+    .search_box {
+      padding: 2rem;
+      .form_search {
+        max-width: 40rem;
+        height: auto;
+        padding: 1rem 2rem;
+        margin: 0 auto;
+        background: $demiwhite;
+        border-radius: 20px;
+        form {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          input.query {
+            width: 280px;
+          }
+          svg {
+            width: auto;
+            height: 1.4rem;
+            padding-right: 1rem;
+          }
+        }
+      }
+    }
+    .search_result {
+      padding: 2rem;
+      .notice {
+        margin-bottom: 2rem;
+        font-weight: 600;
+        color: $darkgray;
+      }
+      a {
+        display: inline-block;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        color: $black;
+        .profile_detail {
+          display: flex;
+          margin-bottom: 2rem;
+          img {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 25px;
+          }
+          .name {
+            margin-left: 1rem;
+          }
+        }
+        .txt.search {
+          p {
+            margin-bottom: 2rem;
+          }
+        }
+        .date.search {
+          p {
+            text-align: right;
+            color: $demigray;
+          }
+        }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  @include sp {
+    .main {
+      .search_box {
+        .form_search {
+          form {
+            input.query {
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
