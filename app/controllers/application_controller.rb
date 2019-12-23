@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     text + " " + hushtag
   end
 
+  def set_retweet_text(mention, text, hushtag)
+    mention + " " + text + " " + hushtag
+  end
+
   def set_tweet(tweet, result, current_user, photo)
     tweet.endemic = result.id
     tweet.user_id = current_user.id

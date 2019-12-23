@@ -4,6 +4,9 @@
 
 /* layout //////////*/
 .sec.home {
+  max-width: 64rem;
+  width: 100%;
+  height: auto;
   .inner {
     padding: 0 2rem;
   }
@@ -16,9 +19,6 @@
 
 /* timeline //////////*/
 .content.home {
-  max-width: 64rem;
-  width: 100%;
-  height: auto;
   border: 1px solid $demigray;
   .tit {
     h2 {
@@ -26,6 +26,9 @@
         display: none;
       }
     }
+  }
+  @include sp {
+    border: none;
   }
 }
 
@@ -36,7 +39,7 @@
         width: 100%;
         height: 240px;
         object-fit: cover;
-        position: relative;
+        //position: relative;
         &::after {
           content: '';
           display: block;
@@ -79,7 +82,7 @@
             margin-top: -8rem;
             border: 5px solid $white;
             border-radius: 8rem;
-            z-index: 99;
+            //z-index: 99;
             img {
               border-radius: 8rem;
             }
@@ -152,7 +155,7 @@
               margin-top: -4rem;
               border: 2px solid $white;
               border-radius: 4rem;
-              z-index: 99;
+              //z-index: 99;
               img {
                 border-radius: 4rem;
               }
@@ -218,7 +221,7 @@
             margin-bottom: 2rem;
             img {
               width: 100%;
-              height: 30rem;
+              height: 27rem;
               object-fit: cover;
               border-radius: 8px;
             }
@@ -234,7 +237,7 @@
           align-items: center;
           .info {
             display: flex;
-            justify-content: stretch;
+            //justify-content: space-between;
             align-items: center;
             p {
               padding-left: 6rem;
@@ -265,7 +268,7 @@
           .tweet_detail {
             .photo {
               img {
-                height: 15rem;
+                height: 18rem;
               }
             }
           }

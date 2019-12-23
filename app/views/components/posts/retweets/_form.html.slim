@@ -1,17 +1,15 @@
-.preview
+/.preview
   = image_tag @photo_uri
 .form_retweet
   = form_with model: @retweet, url: retweets_path(@retweet) do |f|
-    .tweet
-      = f.hidden_field :tweet_id, value: @this_tweet.id
-      = f.hidden_field :endemic, value: @this_tweet.endemic
-      = f.text_field :hushtag, value: @reply_labels
-      = f.text_area :text, value: "@#{current_user.nickname}"
-      .attention
-        ul
-          li ・ハッシュタグはあなたへのリプライを元に、ホットワードを自動作成しています。
-          li ・発行されたハッシュタグは、英語を日本語に自動翻訳しています。
-          li ・翻訳が意図に反している場合など、ご自身でハッシュタグを修正してください。
-          li ・本文はハッシュタグを含め、116文字以内で投稿してください。
-      = f.submit 'ツイートする', class: 'dummy_submit'
-      /button.btn_submit ツイートする ==> ボタン作成用
+    = f.hidden_field :tweet_id, value: @this_tweet.id
+    = f.hidden_field :endemic, value: @this_tweet.endemic
+    p = f.text_field :hushtag, value: @reply_labels, class: 'tweet_txt'
+    p = f.text_area :text, value: "@#{current_user.nickname}", class: 'tweet_txt'
+    p.upload = f.submit 'ツイートする'
+.attention
+  ul
+    li ・ハッシュタグはあなたへのリプライを元に、ホットワードを自動作成しています。
+    li ・発行されたハッシュタグは、英語を日本語に自動翻訳しています。
+    li ・翻訳が意図に反している場合など、ご自身でハッシュタグを修正してください。
+    li ・本文はハッシュタグを含め、116文字以内で投稿してください。

@@ -1,9 +1,11 @@
+#preview.preview
 .form_photo
-  = form_with scope: :photo, url: photos_path(@photo) do |f|
+  = form_with scope: :photo, url: photos_path(@photo), id: 'photo-form' do |f|
     .photo
-      = f.file_field :photo
-      = f.submit '画像をアップロード', class: 'dummy_submit'
-      /button.btn_submit 画像をアップロード ==> ボタン作成用
+      p.select
+        = f.label :file_load, 'ファイルを選択'
+        = f.file_field :photo, id: 'photo_file_load'
+      p.upload = f.submit '画像をアップロード'
 .attention
   ul
     li ・ハッシュタグを発行したい画像をアップロードしてください。

@@ -2,14 +2,14 @@ div id="retweet-modal" class="modal"
   div id="retweet-modal-close" class="modal_bg js-modal-close"
   .modal_content
     .modal_func
-      .attention
+      .hot_attention
         p
           | Twitterアプリケーション上で、このツイートを削除している場合、エラーが発生します。
           br
           | このツイートがTwitterアプリケーションにあるか、確認してください。
       .btn.twitter
-        = link_to 'Twitterのアカウントを作成', 'https://twitter.com/', target: "_blank"
-      .profile
+        = link_to 'Twitterで確認する', 'https://twitter.com/', target: "_blank"
+      .profile_detail
         = render 'components/posts/common/profile'
       #retweet.retweet
         #retweet_error.error

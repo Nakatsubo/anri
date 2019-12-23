@@ -37,7 +37,7 @@ svg.about {
 }
 
 /* timeline //////////*/
-.alert_image.index, .retweet_image.index, .favorite_image.index, .dustbox.index {
+.alert_image.index, .alert_image.detail, .alert_image.noactive, .retweet_image.index, .favorite_image.index, .dustbox.index {
   fill: $demigray;
 }
 
@@ -57,6 +57,6 @@ svg.about {
   fill: $yellow;
 }
 
-.retweet_image.noactive, .favorite_image.noactive, .alert_image.noactive {
+.retweet_image.noactive, .favorite_image.noactive, .dustbox.detail {
   fill: $darkgray;
 }

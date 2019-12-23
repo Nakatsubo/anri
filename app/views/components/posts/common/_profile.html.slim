@@ -1,8 +1,10 @@
-p.image
-  - if current_user.image.present?
-    img src="#{current_user.image}"
-  - else
-    = image_tag 'noimage_profile.jpg'
-p.name
-  = current_user.name
-  span = image_tag 'profile_logo.svg'
+.wrap
+  p.image
+    - if current_user.image.present?
+      img src="#{current_user.image}"
+    - else
+      = image_tag 'noimage_profile.jpg'
+  .name
+    p.fullname
+      = current_user.name
+      = image_tag 'profile_logo.png'

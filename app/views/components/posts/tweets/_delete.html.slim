@@ -3,13 +3,16 @@ div id="dustbox-modal" class="modal"
   .modal_content
     .modal_func
       .delete
-        p.tit ツイートを削除しますか。
-        p.txt
+        p.modal_tit ツイートを削除しますか。
+        p.modal_txt
           | この操作は取り消せません。
           br
           | ANRIとTwitterのタイムライン、Twitterの検索結果からツイートが削除されます。
-      .wrap
-        .btn.cancel
-          = link_to 'キャンセル', tweet_path(@this_tweet)
-        .btn.decision
-          = link_to '削除', tweet_path(@this_tweet), method: :delete, local: true
+      - unless current_user.tweets.count == 1
+        .btn_wrap
+          .btn.cancel
+            = link_to 'キャンセル', tweet_path(@this_tweet)
+          .btn.decision
+            = link_to '削除', tweet_path(@this_tweet), method: :delete, local: true
+      - else
+        p.delete_attention このツイートは削除できません。

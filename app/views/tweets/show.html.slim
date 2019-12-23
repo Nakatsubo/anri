@@ -4,7 +4,7 @@ section.sec.detail
   .inner
     .content.detail
       .tit
-        p.btn.back
+        p.btn.back_home
           = link_to user_path(current_user.name)
             = embedded_svg('back.svg', class: 'back detail')
         h2 ツイート
@@ -14,16 +14,16 @@ section.sec.detail
               = embedded_svg('new_retweet.svg', class: 'retweet detail')
           = render 'components/posts/retweets/index', tweet: @this_tweet, photo_uri: @photo_uri
       .main
-        p.profile.detail
-          = render 'components/users/profile'
-        p.text.detail
-          = @this_tweet.text
-        p.hushtag.detail
-          = @this_tweet.hushtag
-        p.photo.detail
-          = image_tag set_photo_uri(@this_tweet.photo.photo.blob.key)
-        p.date.detail #{convert_time(@this_tweet.created_at)}・#{link_to "Twitter", @this_tweet.user.twitter, target: "_blank"}
-        .wrap
+        = render 'components/users/profile'
+        .tweet_detail
+          p.text
+            = @this_tweet.text
+          p.hushtag
+            = @this_tweet.hushtag
+          p.photo
+            = image_tag set_photo_uri(@this_tweet.photo.photo.blob.key)
+          p.date #{convert_time(@this_tweet.created_at)}・#{link_to "Twitter", @this_tweet.user.twitter, target: "_blank"}
+        .info_detail
           .info
             = render 'components/posts/tweets/info'
           .dustbox
