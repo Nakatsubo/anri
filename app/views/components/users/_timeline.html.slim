@@ -2,10 +2,8 @@
   = link_to tweet_path(tweet.id)
     = render 'components/users/profile'
     .tweet_detail
-      p.text.tweet
-        = tweet.text
-      p.hushtag.tweet
-        = tweet.hushtag
+      p.text.tweet = tweet.text
+      p.hushtag.tweet = tweet.hushtag
       p.photo.tweet
         = image_tag set_photo_uri(tweet.photo.photo.blob.key)
       p.date #{convert_time(tweet.created_at)}

@@ -1,4 +1,6 @@
-p.image = image_tag @photo_uri
-p.text = @tweet.text
-p.hushtag = @tweet.hushtag
-p.date #{time_ago_in_words(@tweet.created_at)}前
+.profile_detail.tweet
+  p.image = image_tag @photo_uri
+  .tweet_detail
+    p.text = @tweet.text
+    p.hushtag = @tweet.hushtag
+    p.date #{time_ago_in_words(@tweet.created_at)}前

@@ -20,7 +20,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 99;
   .modal_bg{
     background: rgba(0,0,0,0.5);
     width: 100%;
@@ -89,7 +89,7 @@ button {
   }
 }
 
-/* common? //////////*/
+/* delete //////////*/
 .modal_func {
   .delete {
     padding: 2rem;
@@ -104,7 +104,7 @@ button {
       color: $red;
     }
   }
-  .wrap {
+  .btn_wrap {
     padding: 2rem;
     display: flex;
     justify-content: center;
@@ -132,7 +132,7 @@ button {
     }
   }
   @include sp {
-    .wrap {
+    .btn_wrap {
       display: block;
       text-align: center;
       .btn.cancel {
@@ -143,6 +143,203 @@ button {
   }
 }
 
+/* photo //////////*/
+.modal_func {
+  .wrap {
+    padding: 2rem;
+    display: flex;
+    .image {
+      display: flex;
+      margin-right: 1rem;
+      img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 25px;
+      }
+    }
+    .name {
+      display: flex;
+      .fullname {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: .5rem;
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: $black;
+        img {
+          width: auto;
+          height: 1.6rem;
+          margin-left: .5rem;
+        }
+      }
+    }
+  }
+  .photo {
+    padding: 2rem;
+    .preview {
+      padding: 2rem 2rem 0;
+      margin-bottom: 1rem;
+      img {
+        width: 100%;
+        height: 27rem;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+    .form_photo {
+      margin-bottom: 2rem;
+      p.select {
+        margin-bottom: 3rem;
+        label {
+          padding: 1rem 12rem;
+          border: 1px solid $darkorange;
+          border-radius: 22px;
+          font-weight: 600;
+          font-size: 1.4rem;
+          color: $darkorange;
+          cursor: pointer;
+          &:hover {
+            opacity: .8;
+          }
+        }
+        input {
+          display: none;
+        }
+      }
+      p.upload {
+        @include btn_upload;
+      }
+    }
+    .error {
+      color: $red;
+    }
+    .attention {
+      color: $darkgray;
+      ul {
+        text-align: left;
+        line-height: 1.75;
+        li {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  .post_tweet {
+    //padding: 2rem;
+    .preview {
+      padding: 2rem 2rem 0;
+      margin-bottom: 1rem;
+      img {
+        width: 100%;
+        height: 27rem;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+    .form_tweet {
+      padding: 2rem 2rem 0;
+      margin-bottom: 2rem;
+      input.tweet_txt, textarea.tweet_txt {
+        width: 100%;
+        height: 4rem;
+        padding: 1rem;
+        background: $demiwhite;
+        font-size: 1.4rem;
+        color: $black;
+      }
+      textarea.tweet_txt {
+        margin-bottom: 2rem;
+      }
+      p.upload {
+        @include btn_upload;
+      }
+    }
+    .error {
+      color: $red;
+    }
+    .attention {
+      padding: 2rem;
+      color: $darkgray;
+      ul {
+        text-align: left;
+        line-height: 1.75;
+        li {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  .post {
+    .profile_detail {
+      padding: 2rem;
+      .image {
+        margin-bottom: 2rem;
+        img {
+          width: 100%;
+          height: 27rem;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+      }
+      .tweet_detail {
+        margin-bottom: 2rem;
+        text-align: left;
+        .text {
+          margin-bottom: 1rem;
+          color: $black;
+        }
+        .hushtag {
+          margin-bottom: 1rem;
+          color: $darkorange;
+        }
+        .date {
+          text-align: right;
+          color: $darkgray;
+        }
+      }
+    }
+  }
+  @include sp {
+    .photo {
+      .preview {
+        img {
+          height: 13.5rem;
+        }
+      }
+      .form_photo {
+        p.select {
+          label {
+            padding: 1rem 7rem;
+          }
+        }
+        p.upload {
+          input {
+            padding: 1rem 6rem;
+          }
+        }
+      }
+    }
+    .post_tweet {
+      .preview {
+        img {
+          height: 13.5rem;
+        }
+      }
+    }
+    .post {
+      .profile_detail {
+        img {
+          height: 13.5rem;
+        }
+      }
+    }
+  }
+}
+
+.btn.back {
+  @include btn_back;
+}
 
 /*////////////////////////////////////////
   navigation

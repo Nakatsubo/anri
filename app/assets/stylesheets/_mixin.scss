@@ -92,3 +92,33 @@ $sp: 559px;
     background: $lightorange;
   }
 }
+
+/* btn_top //////////*/
+@mixin btn_back {
+  padding: 2rem;
+  a {
+    font-weight: 600;
+    color: $darkorange;
+    @include link;
+    &:hover {
+      color: $lightorange;
+    }
+  }
+}
+
+/* btn_upload //////////*/
+@mixin btn_upload {
+  input {
+    padding: 1rem 11rem;
+    background: $darkorange;
+    border-radius: 22px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $white;
+    cursor: pointer;
+    &:hover {
+      transition: all 0.5s ease;
+      background: $lightorange;
+    }
+  }
+}
