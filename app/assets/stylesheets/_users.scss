@@ -4,6 +4,9 @@
 
 /* layout //////////*/
 .sec.home {
+  max-width: 64rem;
+  width: 100%;
+  height: auto;
   .inner {
     padding: 0 2rem;
   }
@@ -16,9 +19,6 @@
 
 /* timeline //////////*/
 .content.home {
-  max-width: 64rem;
-  width: 100%;
-  height: auto;
   border: 1px solid $demigray;
   .tit {
     h2 {
@@ -237,9 +237,9 @@
           align-items: center;
           .info {
             display: flex;
-            justify-content: stretch;
+            //justify-content: space-between;
             align-items: center;
-            p {
+            p.mention_image {
               padding-left: 6rem;
               svg {
                 width: auto;

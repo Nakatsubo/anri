@@ -1,11 +1,11 @@
-p.mention_image
+.mention_image_detail
   - if @this_tweet.retweets.present?
     = embedded_svg('alert.svg', class: 'alert_image detail active')
   - else
     = embedded_svg('alert.svg', class: 'alert_image detail noactive')
-p.retweet_image
+.retweet_image_detail
   #post_reply.post_reply
     = render 'components/posts/replys/index', this_tweet: @this_tweet
-p.favorite_image
+.favorite_image_detail
   #post_favorite.post_favorite
     = render 'components/posts/favorites/index', this_tweet: @this_tweet

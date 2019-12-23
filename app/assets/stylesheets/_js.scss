@@ -36,56 +36,113 @@ button {
     left: 50%;
     transform: translate(-50%,-50%);
     background: $white;
-    border-radius: 4px;
-    .modal_func {
-      ul {
-        display: block;
-        text-align: center;
-        li {
-          border-bottom: 1px solid $lightgray;
-          &:last-of-type {
-            border-bottom: none;
+    border-radius: 8px;
+  }
+}
+
+/* nav //////////*/
+.modal_func {
+  ul {
+    display: block;
+    text-align: center;
+    li {
+      border-bottom: 1px solid $lightgray;
+      &:last-of-type {
+        border-bottom: none;
+      }
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+        color: $darkgray;
+        cursor: pointer;
+        &:hover {
+          transition: all 0.5s ease;
+          color: $darkorange;
+        }
+        img {
+          width: auto;
+          height: 1.6rem;
+          &:hover {
+            transition: all 0.5s ease;
+            opacity: 0.8;
           }
-          a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: auto;
-            padding: 3rem;
-            color: $darkgray;
-            cursor: pointer;
-            &:hover {
-              transition: all 0.5s ease;
-              color: $darkorange;
-            }
-            img {
-              width: auto;
-              height: 1.6rem;
-              &:hover {
-                transition: all 0.5s ease;
-                opacity: 0.8;
-              }
-            }
-            span {
-              display: none;
-            }
-          }
-          &.twitter {
-            a {
-              font-weight: 600;
-              color: $darkblue;
-              &:hover {
-                transition: all 0.5s ease;
-                color: $lightblue;
-              }
-            }
+        }
+        span {
+          display: none;
+        }
+      }
+      &.twitter {
+        a {
+          font-weight: 600;
+          color: $darkblue;
+          &:hover {
+            transition: all 0.5s ease;
+            color: $lightblue;
           }
         }
       }
     }
   }
 }
+
+/* common? //////////*/
+.modal_func {
+  .delete {
+    padding: 2rem;
+    .modal_tit {
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: $darkgray;
+    }
+    .modal_txt {
+      color: $red;
+    }
+  }
+  .wrap {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      @include btn;
+      &:hover {
+        opacity: .8;
+      }
+    }
+    .btn.cancel {
+      margin-right: 2rem;
+      a {
+        padding: 1rem 4rem;
+        border: 1px solid $darkgray;
+        color: $darkgray;
+      }
+    }
+    .btn.decision {
+      a {
+        padding: 1rem 6rem;
+        background: $red;
+        color: $white;
+      }
+    }
+  }
+  @include sp {
+    .wrap {
+      display: block;
+      text-align: center;
+      .btn.cancel {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
 
 /*////////////////////////////////////////
   navigation
