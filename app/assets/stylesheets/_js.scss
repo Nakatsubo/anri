@@ -143,6 +143,14 @@ button {
       .btn.cancel {
         margin-right: 0;
         margin-bottom: 2rem;
+        a {
+          padding: 1rem 8rem;
+        }
+      }
+      .btn.decision {
+        a {
+          padding: 1rem 10rem;
+        }
       }
     }
   }
@@ -406,20 +414,22 @@ button {
     }
   }
   .post_retweet {
-    padding: 2rem;
-    margin-bottom: 2rem;
     text-align: left;
-    .text {
-      margin-bottom: 1rem;
-      color: $black;
-    }
-    .hushtag {
-      margin-bottom: 1rem;
-      color: $darkorange;
-    }
-    .date {
-      text-align: right;
-      color: $darkgray;
+    .comfirm_wrap {
+      padding: 2rem;
+      margin-bottom: 2rem;
+      .text {
+        margin-bottom: 1rem;
+        color: $black;
+      }
+      .hushtag {
+        margin-bottom: 1rem;
+        color: $darkorange;
+      }
+      .date {
+        text-align: right;
+        color: $darkgray;
+      }
     }
   }
 }
@@ -433,7 +443,3 @@ textarea, input {
   font-size: 14px;
   color: $darkgray;
 }
-
-/*////////////////////////////////////////
-  navigation
-////////////////////////////////////////*/

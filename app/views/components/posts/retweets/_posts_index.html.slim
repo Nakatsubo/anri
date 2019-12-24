@@ -1,3 +1,4 @@
-p.text = @retweet.text
-p.hushtag = @retweet.hushtag
-p.date #{time_ago_in_words(@retweet.created_at)}前
+.comfirm_wrap
+  p.text = @retweet.text
+  p.hushtag = @retweet.hushtag
+  p.date #{time_ago_in_words(@retweet.created_at)}前

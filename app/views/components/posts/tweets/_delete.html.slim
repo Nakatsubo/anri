@@ -14,5 +14,6 @@ div id="dustbox-modal" class="modal"
             = link_to 'キャンセル', tweet_path(@this_tweet)
           .btn.decision
             = link_to '削除', tweet_path(@this_tweet), method: :delete, local: true
+        p.delete_attention このツイートが、すでにTwitterのタイムラインから削除されている場合、削除できません。
       - else
         p.delete_attention このツイートは削除できません。

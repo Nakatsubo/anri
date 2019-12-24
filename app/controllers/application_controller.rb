@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  include ErrorHandler #if Rails.env.production?
   before_action :basic
   before_action :set_client
 

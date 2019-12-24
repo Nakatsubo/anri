@@ -88,13 +88,15 @@
 
 /* footer //////////*/
 footer {
-  padding: 2rem;
+  //padding: 2rem;
   .inner {
     width: 100%;
     height: auto;
     margin: 0 auto;
     text-align: center;
     color: $darkgray;
+    position: absolute;
+    bottom: 2rem;
     .nav {
       ul {
         display: flex;
@@ -157,6 +159,7 @@ footer {
     //padding: 2rem;
     padding-right: 0;
     background: $lightgray;
+    z-index: 98;
     .inner {
       width: 100%;
       height: auto;
@@ -219,5 +222,26 @@ footer {
   }
   @include tab {
     display: none;
+  }
+}
+
+/* system_errors //////////*/
+.system_errors {
+  padding-top: 8rem;
+  text-align: center;
+  color: $darkgray;
+  h2 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 3.2rem;
+  }
+  p {
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+  }
+  .btn.top {
+    a {
+      @include btn_top;
+    }
   }
 }

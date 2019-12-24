@@ -3,20 +3,20 @@
     ul.left_aside
       li.sp.home
         = link_to user_path(current_user.name)
-          = embedded_svg('home.svg', id: 'home-is-active')
+          span#home-is-active.is-active = embedded_svg('home.svg')
       li.sp.search
         = link_to searchs_path
-          = embedded_svg('search.svg', id: 'search-is-active')
+          span#search-is-active.is-noactive = embedded_svg('new_search.svg')
       li.sp
         .modal_btn.function_btn
           button id="footer-modal-open" class="js-modal-open"
-            = embedded_svg('function.svg', id: 'function-is-active')
+            span#function-is-active = embedded_svg('function.svg')
         = render 'components/footer/function'
       li.common
         .modal_btn.new_btn
           button id="photo-modal-open" class="js-modal-open"
             = embedded_svg('new_tweet.svg', class: 'pc')
-            = embedded_svg('new_nav.svg', id: 'nav-is-active', class: 'sp')
+            span#nav-is-active.is-noactive = embedded_svg('new_nav.svg', class: 'sp')
         = render 'components/posts/photos/index'
       li.pc
         = link_to searchs_path
