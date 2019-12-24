@@ -36,6 +36,27 @@ svg.about {
   }
 }
 
+/* aside footer //////////*/
+.pc {
+  svg.search {
+    fill: $darkgray;
+  }
+}
+
+.is-active {
+  svg {
+    fill: $darkorange;
+    stroke: $darkorange;
+  }
+}
+
+.is-noactive {
+  svg {
+    fill: $darkgray;
+    stroke: $darkgray;
+  }
+}
+
 /* timeline //////////*/
 .alert_image.index, .alert_image.detail, .alert_image.noactive, .retweet_image.index, .favorite_image.index, .dustbox.index {
   fill: $demigray;
