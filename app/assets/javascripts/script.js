@@ -61,6 +61,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
           const home_is_active = document.getElementById('home-is-active');
           home_is_active.classList.add('is-noactive');
           const nav_is_active = document.getElementById('nav-is-active');
+          nav_is_active.classList.remove('is-noactive');
           nav_is_active.classList.add('is-active');
         }
       };
@@ -74,6 +75,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
     dustbox_modal_open.addEventListener('click', (e) => {
       let modal = document.getElementById('dustbox-modal');
       $(modal).fadeIn();
+      if (document.getElementById('home-is-active') && (document.getElementById('nav-is-active'))) {
+        if (document.getElementById('home-is-active')) {
+          const home_is_active = document.getElementById('home-is-active');
+          home_is_active.classList.add('is-noactive');
+          const nav_is_active = document.getElementById('nav-is-active');
+          nav_is_active.classList.add('is-active');
+        }
+      };
       return false;
     }, false);
   };
