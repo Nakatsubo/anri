@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get :privacy
     end
   end
+  get 'users/sign_in', to: 'homes#index'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'homes#index'
   get '*anything', to: 'errors#routing_error'
