@@ -65,6 +65,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Custom
 gem 'rails-i18n'
 gem 'faker'
+gem 'json2env', '~> 0.0.2'
 
 group :development, :test do
   # Default
