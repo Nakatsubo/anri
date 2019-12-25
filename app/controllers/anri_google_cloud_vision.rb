@@ -24,7 +24,7 @@ class AnriGoogleCloudVision
 
     translate = Google::Cloud::Translate.new(
       version: :v2,
-      credentials: Rails.application.credentials.google[:api_key]
+      credentials: JSON.parse(ENV["ANRI"])
     )
     target_language = "ja"
     @traLabels = []
