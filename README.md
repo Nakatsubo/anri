@@ -394,6 +394,3 @@ favorite
 - 19/12/23 version2.9<br>
   - 優先度低のDM機能の実装を削除
 
-## メモ
-- Herokuでの認証には、TwitterApp の Callback URL を変更する<br>
-  開発環境では http://localhost:3000/ Callback URL とする
