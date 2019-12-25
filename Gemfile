@@ -65,6 +65,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Custom
 gem 'rails-i18n'
 gem 'faker'
+gem 'dotenv-rails'
 
 group :development, :test do
   # Default

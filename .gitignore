@@ -28,6 +28,7 @@
 
 # Ignore system environment variable
 /config/secrets/*
+.env
 
 # Ignore devise view
 /app/views/devise/confirmations

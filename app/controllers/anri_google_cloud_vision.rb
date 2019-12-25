@@ -11,7 +11,7 @@ class AnriGoogleCloudVision
   def response
     image_annotator = Google::Cloud::Vision::ImageAnnotator.new(
       version: :v1,
-      credentials: Rails.application.credentials.google[:api_key]
+      credentials: JSON.parse(ENV["ANRI"])
     )
     file_name = @photo
     response = image_annotator.web_detection(image: file_name, max_results: 5)
