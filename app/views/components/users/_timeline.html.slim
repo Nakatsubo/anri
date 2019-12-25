@@ -1,19 +1,23 @@
-- @tweets.each do |tweet|
-  = link_to tweet_path(tweet.id)
-    = render 'components/users/profile'
-    .tweet_detail
-      p.text.tweet = tweet.text
-      p.hushtag.tweet = tweet.hushtag
-      p.photo.tweet
-        = image_tag set_photo_uri(tweet.photo.photo.blob.key)
-      p.date #{convert_time(tweet.created_at)}
-    .info_detail
-      .info
-        p.mention_image
-          = embedded_svg('alert.svg', class: 'alert_image index')
-        p.retweet_image
-          = embedded_svg('retweet.svg', class: 'retweet_image index')
-        p.favorite_image
-          = embedded_svg('favorite.svg', class: 'favorite_image index')
-      .dustbox
-        = embedded_svg('dustbox.svg', class: 'dustbox index')
+- if @tweets.present?
+  - @tweets.each do |tweet|
+    = link_to tweet_path(tweet.id)
+      = render 'components/users/profile'
+      .tweet_detail
+        p.text.tweet = tweet.text
+        p.hushtag.tweet = tweet.hushtag
+        p.photo.tweet
+          = image_tag set_photo_uri(tweet.photo.photo.blob.key)
+        p.date #{convert_time(tweet.created_at)}
+      .info_detail
+        .info
+          p.mention_image
+            = embedded_svg('alert.svg', class: 'alert_image index')
+          p.retweet_image
+            = embedded_svg('retweet.svg', class: 'retweet_image index')
+          p.favorite_image
+            = embedded_svg('favorite.svg', class: 'favorite_image index')
+        .dustbox
+          = embedded_svg('dustbox.svg', class: 'dustbox index')
+- else
+  p.notimeline
+    | まだ ANRI でツイートしていません。

@@ -260,6 +260,11 @@
         }
       }
     }
+    .notimeline {
+      padding: 2rem;
+      font-weight: 600;
+      color: $darkgray;
+    }
   }
   @include sp {
     .main {
@@ -307,5 +312,9 @@
       text-align: right;
       color: $darkgray;
     }
+  }
+  .norecent_info {
+    font-weight: 600;
+    color: $darkgray;
   }
 }
