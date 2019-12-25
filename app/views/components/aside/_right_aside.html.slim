@@ -5,8 +5,12 @@
         .tit
           h2 ANRI INFO
         - @recent_info = Tweet.recent_info
-        - @recent_info.each do |info|
-          .info
-            p.image = image_tag set_photo_uri(info.photo.photo.blob.key)
-            p.hushtag = info.hushtag
-            p.date #{convert_time(info.created_at)}
+        - if @recent_info.present?
+          - @recent_info.each do |info|
+            .info
+              p.image = image_tag set_photo_uri(info.photo.photo.blob.key)
+              p.hushtag = info.hushtag
+              p.date #{convert_time(info.created_at)}
+        - else
+          p.norecent_info
+            | ANRIのツイートがありません。
