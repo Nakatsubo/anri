@@ -11,7 +11,7 @@ class AnriGoogleCloudVision
   def response
     image_annotator = Google::Cloud::Vision::ImageAnnotator.new(
       version: :v1,
-      credentials: Rails.application.credentials.google[:api_key]
+      credentials: ENV['GOOGLE_CLIENT_SECRETS'] #Rails.application.credentials.google[:api_key]
     )
     file_name = @photo
     response = image_annotator.web_detection(image: file_name, max_results: 5)
@@ -24,7 +24,7 @@ class AnriGoogleCloudVision
 
     translate = Google::Cloud::Translate.new(
       version: :v2,
-      credentials: Rails.application.credentials.google[:api_key]
+      credentials: ENV['GOOGLE_CLIENT_SECRETS'] #Rails.application.credentials.google[:api_key]
     )
     target_language = "ja"
     @traLabels = []
