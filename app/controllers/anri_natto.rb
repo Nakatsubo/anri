@@ -34,7 +34,7 @@ class AnriNatto
     my_name = @client.user.name
     my_nickname = @client.user.screen_name
     # forbidded words
-    forbid_words = %w[http https com co jp my_name my_nickname , ！ @ \n]
+    forbid_words = %w[http https com co jp my_name my_nickname , ！ @ \n #]
     @surfaces = @surfaces.reject { |word| forbid_words.include?(word) }.reject(&:empty?)
     words = @surfaces.group_by(&:itself).map { |k, v| [k, v.size] }.sort_by {|k, v| -v }
     words = words.map { |k, v| k }
