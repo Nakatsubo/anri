@@ -1,7 +1,18 @@
 - if @tweets.present?
   - @tweets.each do |tweet|
     = link_to tweet_path(tweet.id)
-      = render 'components/users/profile'
+      .profile_detail.tweet
+        p.image
+          - @user = set_tweet_user(tweet)
+          - if @user.image.present?
+            = image_tag @user.image
+          - else
+            = image_tag 'noimage_profile.jpg'
+        .name
+          p.fullname
+            - @user = set_tweet_user(tweet)
+            = @user.name
+            = embedded_svg('profile_logo.svg')
       .tweet_detail
         p.text.tweet = tweet.text
         p.hushtag.tweet = tweet.hushtag

@@ -1,6 +1,4 @@
 module ApplicationHelper
-  # set_meta_tag
-  # OGP画像とアカウントを作成する
   def default_meta_tags
     {
       title:       'title',
@@ -34,7 +32,7 @@ module ApplicationHelper
     }
   end
 
-  def embedded_svg filename, options={}
+  def embedded_svg(filename, options={})
     file = File.read(Rails.root.join('app', 'assets', 'images', filename))
     doc = Nokogiri::HTML::DocumentFragment.parse file
     svg = doc.at_css 'svg'
@@ -50,5 +48,9 @@ module ApplicationHelper
 
   def convert_time(time)
     time.strftime("%p%I:%M・%Y年%m月%d日")
+  end
+
+  def set_tweet_user(tweet)
+    User.find(tweet.user_id)
   end
 end

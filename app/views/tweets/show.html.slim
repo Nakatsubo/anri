@@ -14,7 +14,18 @@ section.sec.detail
               = embedded_svg('new_retweet.svg', class: 'retweet detail')
           = render 'components/posts/retweets/index', tweet: @this_tweet, photo_uri: @photo_uri
       .main
-        = render 'components/users/profile'
+        .profile_detail
+          p.image
+            - @user = set_tweet_user(@this_tweet)
+            - if @user.image.present?
+              = image_tag @user.image
+            - else
+              = image_tag 'noimage_profile.jpg'
+          .name
+            p.fullname
+              - @user = set_tweet_user(@this_tweet)
+              = @user.name
+              = embedded_svg('profile_logo.svg')
         .tweet_detail
           p.text
             = @this_tweet.text
@@ -26,9 +37,10 @@ section.sec.detail
         .info_detail
           .info
             = render 'components/posts/tweets/info'
-          .dustbox
-            .modal_btn.new_btn
-              button id="dustbox-modal-open" class="js-modal-open"
-                = embedded_svg('dustbox.svg', class: 'dustbox detail')
-            = render 'components/posts/tweets/delete'
+          - if @this_tweet.user_id == current_user.id
+            .dustbox
+              .modal_btn.new_btn
+                button id="dustbox-modal-open" class="js-modal-open"
+                  = embedded_svg('dustbox.svg', class: 'dustbox detail')
+              = render 'components/posts/tweets/delete'
 = render 'components/aside/right_aside'

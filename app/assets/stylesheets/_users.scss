@@ -37,7 +37,7 @@
     .banner {
       img {
         width: 100%;
-        height: 240px;
+        height: auto;
         object-fit: cover;
         //position: relative;
         &::after {
@@ -96,7 +96,7 @@
               align-items: center;
               margin-bottom: .5rem;
               font-weight: 600;
-              font-size: 2.4rem;
+              font-size: 2rem;
               color: $black;
               svg {
                 width: auto;
@@ -113,6 +113,7 @@
       }
       .introduction {
         margin-bottom: 2rem;
+        line-height: 1.75;
       }
       .others {
         display: flex;
@@ -171,7 +172,7 @@
   .main {
     .timeline {
       a {
-        display: inline-block;
+        display: block;
         padding: 2rem;
         border-top: 1px solid $demigray;
         background: $white;

@@ -69,10 +69,12 @@
       margin-bottom: 2rem;
       .text {
         margin-bottom: 1rem;
+        line-height: 1.75;
         color: $black;
       }
       .hushtag {
         margin-bottom: 1rem;
+        line-height: 1.75;
         color: $darkorange;
       }
       .photo {
@@ -113,7 +115,7 @@
         }
         a {
           display: inline-flex;
-          padding-left: 6rem;
+          margin-left: 6rem;
           svg {
             width: auto;
             height: 2rem;

@@ -26,12 +26,16 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @photo = Photo.new
-    @tweet = Tweet.new
-    @retweet = Retweet.new
-    @client = set_client
-    @photo_uri = set_uri(@this_tweet.photo.photo.blob.key)
-    @reply_labels = AnriNatto.new(@client).set_reply_labels
+    if @this_tweet.user_id == current_user.id
+      @photo = Photo.new
+      @tweet = Tweet.new
+      @retweet = Retweet.new
+      @client = set_client
+      @photo_uri = set_uri(@this_tweet.photo.photo.blob.key)
+      @reply_labels = AnriNatto.new(@client).set_reply_labels
+    else
+      redirect_to user_path(current_user.name)
+    end
   end
 
   def destroy

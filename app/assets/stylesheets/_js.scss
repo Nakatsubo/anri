@@ -299,10 +299,12 @@ button {
         text-align: left;
         .text {
           margin-bottom: 1rem;
+          line-height: 1.75;
           color: $black;
         }
         .hushtag {
           margin-bottom: 1rem;
+          line-height: 1.75;
           color: $darkorange;
         }
         .date {
@@ -420,10 +422,12 @@ button {
       margin-bottom: 2rem;
       .text {
         margin-bottom: 1rem;
+        line-height: 1.75;
         color: $black;
       }
       .hushtag {
         margin-bottom: 1rem;
+        line-height: 1.75;
         color: $darkorange;
       }
       .date {

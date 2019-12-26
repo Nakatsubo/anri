@@ -30,6 +30,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include sp {
+    margin-top: 4rem;
+  }
 }
 
 /* detail //////////*/
@@ -56,6 +59,7 @@
     }
     .lead {
       margin-bottom: 2rem;
+      line-height: 1.75;
       color: $darkgray;
     }
     .link.about {
@@ -78,6 +82,7 @@
   .sub {
     .lead {
       margin-bottom: 2rem;
+      line-height: 1.75;
       font-weight: 600;
       color: $darkgray;
     }

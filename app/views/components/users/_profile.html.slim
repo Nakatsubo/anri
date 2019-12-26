@@ -1,10 +1,23 @@
-.profile_detail.tweet
+.wrap
   p.image
-    - if current_user.image.present?
-      img src="#{current_user.image}"
+    - if @client.user.profile_image_url(:original).present?
+      img src="#{@client.user.profile_image_url(:original)}"
     - else
       = image_tag 'noimage_profile.jpg'
   .name
     p.fullname
-      = current_user.name
       = embedded_svg('profile_logo.svg')
+      = current_user.name
+    p.nickname @#{current_user.nickname}
+p.introduction
+  = current_user.description
+.others
+  - if current_user.location.present?
+    p.location
+      = embedded_svg('location.svg')
+      = current_user.location
+  - if current_user.website.present?
+    p.website
+      = embedded_svg('website.svg')
+      = link_to "#{current_user.website}", target: '_blank'
+        = current_user.website

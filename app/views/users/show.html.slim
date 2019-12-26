@@ -1,17 +1,17 @@
-- set_meta_tags title: @client.user.name + " | ANRI", description: "タイムライン"
+- set_meta_tags title: current_user.name + " | ANRI", description: "タイムライン"
 = render 'components/aside/left_aside'
 section.sec.home
   .inner
     .content.home
       .tit
         h2
-          span #{@client.user.name}
+          span #{current_user.name}
       .main
         .banner
           = render 'components/users/banner'
         .user
           .profile
-            = render 'components/users/main_profile'
+            = render 'components/users/profile'
           h3 タイムライン
           .timeline
             = render 'components/users/timeline'

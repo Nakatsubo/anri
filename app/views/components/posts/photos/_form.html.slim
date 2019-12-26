@@ -4,11 +4,12 @@
     .photo
       p.select
         = f.label :file_load, 'ファイルを選択'
-        = f.file_field :photo, id: 'photo_file_load'
+        = f.file_field :photo, id: 'photo_file_load', accept: 'image/jpeg'
       p.upload = f.submit '画像をアップロード'
 .attention
   ul
     li ・ハッシュタグを発行したい画像をアップロードしてください。
     li ・ハッシュタグは自動で5件生成されます。
     li ・ハッシュタグの生成には時間がかかる場合があります。
+    li ・アップロードできるのは、JPEG形式のファイルだけです。
     li ・画像をアップロードしたら5分以内に投稿してください。
