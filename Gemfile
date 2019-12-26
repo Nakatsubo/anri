@@ -13,7 +13,8 @@ gem 'rails', '~> 5.2.3' #default
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 # Custom
-#gem 'unicorn' => 最終的なデプロイ段階でWebサーバーをNginxに変更する
+source 'https://rubygems.org'
+gem 'unicorn'
 
 # View/Frontend
 # Default
