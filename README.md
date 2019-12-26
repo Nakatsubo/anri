@@ -219,8 +219,8 @@ tweet
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|
 |1|ID|id|integer|15|○|||ID|
 |2|ツイートid|endemic|bigint|255|○|||ツイートid|
-|3|テキスト|text|text|116||||テキスト|
-|4|ハッシュタグ|hushtag|text|116||||ハッシュタグ|
+|3|テキスト|text|text|255||||テキスト|
+|4|ハッシュタグ|hushtag|text|255||||ハッシュタグ|
 |5|外部キー|user_id|bigint|255|||○|外部キー|
 |6|外部キー|photo_id|bigint|255|||○|外部キー|
 
@@ -241,13 +241,31 @@ reply
 |3|外部キー|tweet_id|bigint|255|||○|外部キー|
 
 
-### テーブル論理名07
+### テーブル論理名06
+リプライ情報の管理
+
+### テーブル物理名06
+retweet
+
+### コメント06
+投稿したretweetのid情報を管理する
+
+|#|カラム論理名|カラム物理名|型|桁|NOTNULL|主キー|インデックス|コメント|
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|1|ID|id|integer|15|○|||ID|
+|2|テキスト|text|text|255||||テキスト|
+|3|ハッシュタグ|hushtag|text|255||||ハッシュタグ|
+|4|endemic|bigint|255|○|||ツイートid|
+|5|外部キー|tweet_id|bigint|255|||○|外部キー|
+
+
+### テーブル論理名08
 いいね情報の管理
 
-### テーブル物理名07
+### テーブル物理名08
 favorite
 
-### コメント07
+### コメント08
 投稿したfavoriteのステータス情報を管理する
 
 |#|カラム論理名|カラム物理名|型|桁|NOTNULL|主キー|インデックス|コメント|
@@ -255,6 +273,21 @@ favorite
 |1|ID|id|integer|15|○|||ID|
 |2|ステータス|status|bigint|15||||ステータス|
 |3|外部キー|tweet_id|bigint|255|||○|外部キー|
+
+
+### テーブル論理名09
+検索情報の管理
+
+### テーブル物理名09
+search
+
+### コメント09
+searchのクエリ情報を管理する
+
+|#|カラム論理名|カラム物理名|型|桁|NOTNULL|主キー|インデックス|コメント|
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|1|ID|id|integer|15|○|||ID|
+|2|クエリ|query|text|255||||クエリ|
 
 
 ## ER図
@@ -291,8 +324,8 @@ favorite
 - sass-rails
 - autoprefixer-rails
 - font-awesome-rails
-- jquery-rails
-- gon
+- ~~jquery-rails~~
+- ~~gon~~
 - uglifier
 - slim-rails
 - html2slim
@@ -311,8 +344,8 @@ favorite
 - devise
 - omniauth
 - omniauth-twitter
-- rails_admin
-- cancan
+- ~~rails_admin~~
+- ~~cancan~~
 
 ### SEO
 - meta-tags
@@ -343,7 +376,7 @@ favorite
 - spring-watcher-listen
 - capybara
 - selenium-webdriver
-- chromedriver-helper
+- ~~chromedriver-helper~~
 - tzinfo-data
 - faker
 
@@ -393,4 +426,5 @@ favorite
   - search モデルを作成。query のステータスを管理する必要があるため
 - 19/12/23 version2.9<br>
   - 優先度低のDM機能の実装を削除
+- 19/12/26 version3.0 提出に伴いバージョンアップ
 
